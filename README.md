@@ -51,7 +51,7 @@ The main toolbox for running `llama.cpp`. Pre-built containers for Fedora (Toolb
 Fedora toolbox with a ROCm environment (TheRock Nightlies) set up for image & video generation.
 
 * **Workflows:** Qwen Image, Qwen Image Edit, Wan 2.2, HunyuanVideo 1.5.
-* **Config:** Pre-configured with `--disable-mmap` and `--cache-none`.
+* **Config:** Pre-configured with `--disable-mmap`, `--cache-none` and `--bf16-vae`.
 * **Benchmarks:** [View Performance Benchmarks](https://kyuz0.github.io/amd-strix-halo-comfyui/)
 
 ### 3. LLM Fine-tuning
