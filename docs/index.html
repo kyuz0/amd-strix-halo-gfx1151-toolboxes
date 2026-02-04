@@ -11,6 +11,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 
 <body>
@@ -180,6 +182,24 @@
                     </p>
                     <a href="https://github.com/kyuz0/amd-strix-halo-llm-finetuning" class="btn-link">View Repo -></a>
                 </div>
+            </div>
+        </section>
+
+        <!-- Tutorials / Guides -->
+        <section id="tutorials" class="section">
+            <div class="section-header">
+                <h2>Tutorials & Guides</h2>
+                <span style="font-family: var(--font-mono); color: var(--accent-blue);">// YOUTUBE VIDEOS</span>
+            </div>
+
+            <!-- Swiper -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper" id="video-container">
+                    <!-- Slides will be injected here via JS -->
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
         </section>
 
@@ -354,5 +374,86 @@
     </footer>
 
 </body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', async () => {
+        const PLAYLIST_ID = 'PLNg09XqZv0dFzHP1LxYb7tIsK_Pk94mK_';
+        const RSS_URL = `https://www.youtube.com/feeds/videos.xml?playlist_id=${PLAYLIST_ID}`;
+        const API_URL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}`;
+
+        const container = document.getElementById('video-container');
+
+        try {
+            const response = await fetch(API_URL);
+            const data = await response.json();
+
+            if (data.status === 'ok') {
+                // Reverse the array to show newest videos first
+                const reversedItems = data.items.reverse();
+
+                reversedItems.forEach(item => {
+                    const videoId = item.guid.split(':')[2];
+                    const slide = document.createElement('div');
+                    slide.className = 'swiper-slide';
+
+                    // Create high-res thumbnail URL
+                    const thumbUrl = `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
+
+                    slide.innerHTML = `
+                        <a href="${item.link}" target="_blank" class="video-card">
+                            <div class="thumbnail-wrapper">
+                                <img src="${thumbUrl}" alt="${item.title}" loading="lazy" onerror="this.src='${item.thumbnail}'">
+                                <div class="play-overlay">
+                                    <span class="play-icon">▶</span>
+                                </div>
+                            </div>
+                            <div class="video-info">
+                                <h4>${item.title}</h4>
+                                <span class="watch-text">Watch on YouTube -></span>
+                            </div>
+                        </a>
+                    `;
+                    container.appendChild(slide);
+                });
+
+                // Initialize Swiper after adding slides
+                const swiper = new Swiper(".mySwiper", {
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                    loop: true,
+                    pagination: {
+                        el: ".swiper-pagination",
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    },
+                    breakpoints: {
+                        640: {
+                            slidesPerView: 1,
+                            spaceBetween: 20,
+                        },
+                        768: {
+                            slidesPerView: 2,
+                            spaceBetween: 30,
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                            spaceBetween: 30,
+                        },
+                    },
+                });
+
+            } else {
+                container.innerHTML = '<p style="text-align:center; color: var(--text-secondary);">Unable to load tutorials at this time.</p>';
+            }
+        } catch (error) {
+            console.error('Error fetching videos:', error);
+            container.innerHTML = '<p style="text-align:center; color: var(--text-secondary);">Unable to load tutorials at this time.</p>';
+
+        }
+    });
+</script>
 
 </html>

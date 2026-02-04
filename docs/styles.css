@@ -430,3 +430,151 @@ footer {
         display: none;
     }
 }
+
+/* Tutorials / Guides */
+.swiper {
+    width: 100%;
+    padding-bottom: 3rem !important;
+    /* Make room for pagination */
+}
+
+.swiper-slide {
+    height: auto;
+    display: flex;
+}
+
+.video-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    transition: transform 0.2s, border-color 0.2s;
+    text-decoration: none;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-red);
+}
+
+.thumbnail-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    /* 16:9 Aspect Ratio */
+    overflow: hidden;
+    background: #000;
+}
+
+.thumbnail-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.video-card:hover .thumbnail-wrapper img {
+    transform: scale(1.05);
+}
+
+.play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.video-card:hover .play-overlay {
+    opacity: 1;
+}
+
+.play-icon {
+    font-size: 3rem;
+    color: #fff;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.video-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.video-info h4 {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.watch-text {
+    color: var(--accent-red);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Swiper Customization */
+.swiper-pagination-bullet {
+    background: #e0e0e0 !important;
+    /* Light grey for visibility on dark bg */
+    opacity: 0.3 !important;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--accent-red) !important;
+    opacity: 1 !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    background-color: var(--accent-red);
+    width: 44px !important;
+    /* Force width */
+    height: 44px !important;
+    /* Force height */
+    min-width: 44px;
+    /* Prevent squashing */
+    border-radius: 50%;
+    color: white !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, transform 0.2s;
+    z-index: 20;
+    margin-top: 0;
+    /* Fix vertical alignment if swiper messes with it */
+    transform: translateY(-50%);
+    /* Specific centering if needed, though swiper defaults usually handle top:50% */
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: #c41219;
+    transform: translateY(-50%) scale(1.1);
+    /* Keep the Y translation when scaling */
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 1.2rem !important;
+    font-weight: bold;
+}
