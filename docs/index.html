@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strix Halo AI Toolboxes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">STRIX<span class="halo">HALO</span>_TOOLBOXES</div>
+        <div class="nav-links">
+            <a href="#about">Story</a>
+            <a href="#strix">What is Strix Halo?</a>
+            <a href="#toolboxes">The Toolboxes</a>
+            <a href="#config">Host Config</a>
+            <a href="#connect" style="color: var(--accent-red);">Connect</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+
+        <h1>Strix Halo <span class="halo">AI Toolboxes</span></h1>
+        <p class="subtitle">Toolboxes for GenAI on AMD Ryzen AI MAX+</p>
+        <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+            Containerized environments for LLMs, Image Generation, and Fine-tuning. <br>
+        </p>
+    </section>
+
+    <div class="container">
+
+        <!-- About / Story -->
+        <section id="about" class="section">
+            <div class="grid-2">
+                <div class="story-text">
+                    <div class="section-header">
+                        <h2>The Project</h2>
+                        <span style="font-family: var(--font-mono); color: var(--accent-red);">// EST. AUG 2025</span>
+                    </div>
+                    <p>
+                        In August 2025, I got my hands on a Strix Halo machine. I needed to run local inference for some
+                        Cyber Security work where Cloud LLMs were not an option.
+                        <br><br>
+                        I quickly realized the software ecosystem wasn't ready. Stuff wasn't working. So I started
+                        digging, learning, and fixing things.
+                        I shared my findings in a video that unexpectedly blew up. Since then, thousands of people have
+                        used these toolboxes to unlock the potential of their hardware.
+                    </p>
+                    <p>
+                        Thanks to support from the open-source community, Framework, and AMD, I've continued to maintain
+                        these "Toolboxes" to help others reproduce this setup and run AI workloads on Strix Halo
+                        hardware.
+                    </p>
+                </div>
+                <div class="about-card">
+                    <h3>// WHOAMI</h3>
+                    <p style="margin-bottom: 1rem;">
+                        <strong>Donato Capitella</strong>
+                    </p>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                        Software Engineer and Ethical Hacker. I enjoy understanding systems by breaking them down and
+                        documenting the process.
+                    </p>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <a href="https://www.youtube.com/@donatocapitella" target="_blank" class="btn-link">
+                            ▶ YouTube Channel
+                        </a>
+                        <a href="https://www.linkedin.com/in/dcapitella" target="_blank" class="btn-link">
+                            🔗 LinkedIn Profile
+                        </a>
+                        <a href="https://llm-chronicles.com/" target="_blank" class="btn-link">
+                            📝 LLM Chronicles
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What is Strix Halo? -->
+        <section id="strix" class="section">
+            <div class="section-header">
+                <h2>What is Strix Halo?</h2>
+                <span style="font-family: var(--font-mono); color: var(--accent-blue);">// RYZEN AI MAX+</span>
+            </div>
+            <div class="grid-2">
+                <div>
+                    <img src="assets/strix-halo.png" alt="AMD Ryzen AI MAX"
+                        style="width: 100%; border-radius: 8px; border: 1px solid var(--border-color);">
+                    <p style="text-align: center; margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-secondary);">
+                        Image: AMD</p>
+                </div>
+                <div class="halo-specs">
+                    <p style="margin-bottom: 1.5rem;">
+                        <strong>"Strix Halo"</strong> (Ryzen AI MAX+) is AMD's high-performance mobile processor
+                        platform.
+                        Its key feature for AI workloads is <strong>Unified Memory</strong>, allowing the iGPU to access
+                        up to 128GB of system RAM, significantly increasing the model size capacity compared to
+                        traditional consumer GPUs.
+                    </p>
+
+                    <div class="spec-item">
+                        <span class="spec-label">Architecture</span>
+                        <span class="spec-value">Zen 5 + RDNA 3.5</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Compute ID</span>
+                        <span class="spec-value">gfx1151</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Max Unified Memory</span>
+                        <span class="spec-value">128 GB</span>
+                    </div>
+
+                    <div style="margin-top: 1.5rem;">
+                        <a href="https://www.amd.com/en/products/processors/laptop/ryzen/ai-300-series/amd-ryzen-ai-max-plus-395.html"
+                            target="_blank" class="btn-link">-> Official Product Page</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Toolboxes -->
+        <section id="toolboxes" class="section">
+            <div class="section-header">
+                <h2>Active Toolboxes</h2>
+                <span style="font-family: var(--font-mono); color: var(--accent-green);">// MAINTAINED CONTAINERS</span>
+            </div>
+
+            <div class="toolbox-grid">
+                <!-- Llama.cpp -->
+                <div class="toolbox-card">
+                    <div class="toolbox-icon">🦙</div>
+                    <h3>Llama.cpp Toolboxes</h3>
+                    <p>Setup for LLM inference. Supports clustering via RDMA and Vulkan/ROCm backends.</p>
+                    <a href="https://github.com/kyuz0/amd-strix-halo-toolboxes" class="btn-link">View Repo -></a>
+                </div>
+
+                <!-- ComfyUI -->
+                <div class="toolbox-card">
+                    <div class="toolbox-icon">🎨</div>
+                    <h3>ComfyUI Toolboxes</h3>
+                    <p>Environment for Image & Video generation. Validated for Flux, Wan 2.2, HunyuanVideo, and Qwen.
+                    </p>
+                    <a href="https://github.com/kyuz0/amd-strix-halo-comfyui-toolboxes" class="btn-link">View Repo
+                        -></a>
+                </div>
+
+                <!-- vLLM -->
+                <div class="toolbox-card">
+                    <div class="toolbox-icon">🚀</div>
+                    <h3>vLLM Toolboxes</h3>
+                    <p>Serving server setup. Includes custom RCCL patches for high-speed clustering.</p>
+                    <a href="https://github.com/kyuz0/amd-strix-halo-vllm-toolboxes" class="btn-link">View Repo -></a>
+                </div>
+
+                <!-- Finetuning -->
+                <div class="toolbox-card">
+                    <div class="toolbox-icon">🧠</div>
+                    <h3>LLM Fine-tuning</h3>
+                    <p>Training environment. QLoRA and Full Fine-Tuning support for Gemma 3, Qwen 3, and generic models.
+                    </p>
+                    <a href="https://github.com/kyuz0/amd-strix-halo-llm-finetuning" class="btn-link">View Repo -></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Host Config -->
+        <section id="config" class="section">
+            <div class="section-header">
+                <h2>The Rig & Config</h2>
+                <span style="font-family: var(--font-mono); color: var(--accent-red);">// TUNED FOR PERFORMANCE</span>
+            </div>
+
+            <p style="margin-bottom: 2rem; color: var(--text-secondary);">
+                Consistent performance starts with the right host setup. This is the configuration I use to maintain and
+                benchmark all toolboxes.
+            </p>
+
+            <div
+                style="display: grid; grid-template-columns: minmax(200px, 300px) 1fr; gap: 3rem; margin-bottom: 3rem; align-items: start;">
+
+                <!-- Image Column -->
+                <div>
+                    <img src="assets/framework-desktop.png" alt="Framework Desktop"
+                        style="width: 100%; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
+                    <p style="text-align: center; margin-top: 0.8rem; font-size: 0.8rem; color: var(--text-secondary);">
+                        My Rig - Sent to me by <a href="https://frame.work/products/desktop" target="_blank"
+                            style="color: var(--accent-red); text-decoration: underline;">Framework</a>
+                    </p>
+                </div>
+
+                <!-- Config Details Column -->
+                <div class="halo-specs">
+                    <h3 style="margin-bottom: 1rem; color: var(--text-primary);">System Specifications</h3>
+                    <div class="spec-item">
+                        <span class="spec-label">Model</span>
+                        <span class="spec-value">Framework Desktop</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">CPU</span>
+                        <span class="spec-value">Ryzen AI MAX+ 395 "Strix Halo"</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Total RAM</span>
+                        <span class="spec-value">128 GB DDR5</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">OS</span>
+                        <span class="spec-value">Fedora 43 (Linux 6.18.5)</span>
+                    </div>
+
+                    <div
+                        style="margin-top: 2rem; padding: 1.5rem; background: rgba(237, 28, 36, 0.05); border-radius: 8px; border: 1px solid rgba(237, 28, 36, 0.2);">
+                        <h4 style="color: var(--accent-red); margin-bottom: 0.5rem; font-size: 1rem;">Why Custom Kernel
+                            Parameters?</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                            Many guides suggest statically partitioning memory between the CPU and iGPU (e.g., locking
+                            32GB for video).
+                            However, this is a waste. With <strong>Unified Dynamic Memory</strong>, we can let the GPU
+                            access nearly all system RAM (up to ~124GB) on demand, while keeping the flexibility to use
+                            it for the CPU when needed.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terminal Block -->
+            <div class="terminal-block" style="margin-bottom: 2rem;">
+                <div class="terminal-header" style="background: #333; padding: 0.5rem; text-align: left;">
+                    <span
+                        style="color: #bbb; font-family: var(--font-mono); font-size: 0.8rem;">root@strix-halo:~</span>
+                </div>
+                <div class="terminal-body" style="overflow-x: auto;">
+                    <div style="margin-bottom: 1rem; color: #888;"># Add these to GRUB_CMDLINE_LINUX in
+                        /etc/default/grub</div>
+                    <div class="cmd">$ sudo vim /etc/default/grub</div>
+                    <div class="output"
+                        style="color: var(--text-primary); white-space: normal; overflow-wrap: anywhere;">
+                        GRUB_CMDLINE_LINUX="... <span style="color: var(--accent-red);">iommu=pt amdgpu.gttsize=126976
+                            ttm.pages_limit=32505856</span>"</div>
+                    <div class="cmd" style="margin-top: 1rem;">$ sudo grub2-mkconfig -o /boot/grub2/grub.cfg</div>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 30%;">Parameter</th>
+                            <th>How it enables Unified Memory</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-family: var(--font-mono);">iommu=pt</td>
+                            <td><strong>Pass-Through Mode</strong>: Bypass IOMMU translation for the GPU, reducing
+                                overhead when
+                                accessing the user-space pages.</td>
+                        </tr>
+                        <tr>
+                            <td style="font-family: var(--font-mono);">amdgpu.gttsize=126976</td>
+                            <td><strong>GTT Size (Graphics Translation Table)</strong>: Explicitly sets the maximum
+                                unified memory
+                                addressable by the GPU to ~124GB (126976 MB), overriding default driver limits.</td>
+                        </tr>
+                        <tr>
+                            <td style="font-family: var(--font-mono);">ttm.pages_limit=32505856</td>
+                            <td><strong>Pinned Memory Limit</strong>: Allows the TTM (Translation Table Manager) to pin
+                                up to ~124GB
+                                of pages in high-speed system RAM, ensuring the GPU has direct access without swapping.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <h3 style="margin-bottom: 1rem; color: var(--text-primary);">Power & Performance Tuning</h3>
+                <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">
+                    Following the documentation <a href="https://strixhalo.wiki/AI/AI_Capabilities_Overview"
+                        target="_blank" style="color: var(--accent-red); text-decoration: underline;">here</a>, we set a
+                    performance profile to get max performance.
+                </p>
+
+                <div class="terminal-block">
+                    <div class="terminal-header" style="background: #333; padding: 0.5rem; text-align: left;">
+                        <span
+                            style="color: #bbb; font-family: var(--font-mono); font-size: 0.8rem;">root@strix-halo:~</span>
+                    </div>
+                    <div class="terminal-body" style="overflow-x: auto;">
+                        <div class="cmd">$ paru -S tuned</div>
+                        <div class="cmd">$ sudo systemctl enable --now tuned</div>
+
+                        <div class="cmd" style="margin-top: 1rem;">$ tuned-adm list | grep accelerator</div>
+                        <div class="output"
+                            style="color: var(--text-primary); white-space: normal; overflow-wrap: anywhere;">-
+                            accelerator-performance - Throughput performance based tuning with disabled higher latency
+                            STOP states</div>
+
+                        <div class="cmd" style="margin-top: 1rem;">$ sudo tuned-adm profile accelerator-performance
+                        </div>
+                        <div class="cmd">$ tuned-adm active</div>
+                        <div class="output"
+                            style="color: var(--text-primary); white-space: normal; overflow-wrap: anywhere;">Current
+                            active profile: accelerator-performance</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Connect -->
+        <section id="connect" class="section" style="text-align: center; margin-bottom: 4rem;">
+            <h2>Join the Community</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem; max-width: 600px; margin: 0 auto 2rem auto;">
+                Connect with other Strix Halo owners, share benchmarks, and get help.
+            </p>
+            <div class="connect-links" style="justify-content: center;">
+                <a href="https://strixhalo-homelab.d7.wtf/" class="btn-primary">Strix Halo Home Lab</a>
+                <a href="https://discord.gg/pnPRyucNrG" class="btn-secondary">Join the Discord</a>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="socials">
+            <a href="https://www.youtube.com/@donatocapitella" target="_blank">YouTube</a>
+            <a href="https://github.com/kyuz0" target="_blank">GitHub</a>
+            <a href="https://github.com/kyuz0/amd-strix-halo-toolboxes" target="_blank">Project Repo</a>
+        </div>
+        <p style="font-size: 0.8rem; opacity: 0.5;">
+            &copy; 2026 Donato Capitella. Built for the Strix Halo Community.
+        </p>
+    </footer>
+
+</body>
+
+</html>
