@@ -22,4 +22,4 @@ This is a collection of containerized environments for running GenAI workloads o
 
 ## Support
 
-This is a hobby project that takes a lot of time to test and maintain. If you'd like to support my work, you can [buy me a coffee](https://buymeacoffee.com/dcapitellau).
+This is a hobby project that takes a lot of time to test and maintain. If you'd like to support my work, you can [buy me a coffee](https://buymeacoffee.com/dcapitella).
