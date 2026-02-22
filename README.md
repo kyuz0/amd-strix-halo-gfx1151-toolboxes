@@ -13,7 +13,7 @@ This is a collection of containerized environments for running GenAI workloads o
 
 I tested these toolboxes on the following Fedora configuration. Fedora has a very strong and seamless implementation of `toolbox`.
 
-*   **OS**: Fedora 43 (Linux 6.18.5)
+*   **OS**: Fedora 43 (Linux 6.18.9-200)
 *   **Kernel Parameters**: `iommu=pt amdgpu.gttsize=126976 ttm.pages_limit=32505856`
 *   **Tuning**: `tuned` via `accelerator-performance` profile.
 
