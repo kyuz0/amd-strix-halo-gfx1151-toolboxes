@@ -11,9 +11,30 @@ This is a collection of containerized environments for running GenAI workloads o
 
 ## Host Config
 
+I tested these toolboxes on the following Fedora configuration. Fedora has a very strong and seamless implementation of `toolbox`.
+
 *   **OS**: Fedora 43 (Linux 6.18.5)
 *   **Kernel Parameters**: `iommu=pt amdgpu.gttsize=126976 ttm.pages_limit=32505856`
 *   **Tuning**: `tuned` via `accelerator-performance` profile.
+
+**Ubuntu Users:** The default `toolbox` package on Ubuntu handles permissions differently than on Fedora, which can break GPU access. We recommend using **Distrobox** instead. 
+
+If you are on Ubuntu, you must first set up these specific permissions:
+
+```sh
+# Add your user to required GPU groups
+sudo usermod -aG video,render $USER
+
+# Ensure the compute device is accessible (persists across reboots)
+echo 'KERNEL=="kfd", GROUP="render", MODE="0660"' | sudo tee /etc/udev/rules.d/70-kfd.rules
+sudo udevadm control --reload-rules && sudo udevadm trigger
+```
+
+> **Note:** This Distrobox configuration has been tested on **Ubuntu 25.10** with **Mainline Kernel 6.18.7-061807**. To enable mainline kernels on Ubuntu, you can use the [Ubuntu Mainline Kernel Installer](https://github.com/bkw777/mainline).
+
+---
+
+Create and enter your toolbox of choice. **(Ubuntu users: remember to use `distrobox` instead of `toolbox` in the commands below).**
 
 ## Links
 
