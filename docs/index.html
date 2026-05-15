@@ -306,6 +306,13 @@
                     </p>
                 </div>
 
+                <div
+                    style="margin-bottom: 2rem; padding: 1.5rem; background: rgba(0, 164, 228, 0.05); border-radius: 8px; border-left: 2px solid var(--accent-blue);">
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; margin: 0;">
+                        <strong>Performance Note:</strong> Benchmarking by <a href="https://github.com/urbanswelt" target="_blank" style="color: var(--accent-blue); text-decoration: underline;">Lars Urban</a> (<a href="https://github.com/kyuz0/amd-strix-halo-toolboxes/issues/66#issuecomment-4460612951" target="_blank" style="color: var(--accent-blue); text-decoration: underline;">Issue #66</a>) shows a 5-12% performance increase by setting <code style="color: var(--text-primary); font-family: var(--font-mono); font-size: 0.85em;">amd_iommu=off</code> instead of the previously recommended pass-through mode.
+                    </p>
+                </div>
+
                 <!-- Terminal Block -->
                 <div class="terminal-block" style="margin-bottom: 2rem;">
                     <div class="terminal-header" style="background: #333; padding: 0.5rem; text-align: left;">
@@ -318,7 +325,7 @@
                         <div class="cmd">$ sudo vim /etc/default/grub</div>
                         <div class="output"
                             style="color: var(--text-primary); white-space: normal; overflow-wrap: anywhere;">
-                            GRUB_CMDLINE_LINUX="... <span style="color: var(--accent-red);">iommu=pt
+                            GRUB_CMDLINE_LINUX="... <span style="color: var(--accent-red);">amd_iommu=off
                                 amdgpu.gttsize=126976
                                 ttm.pages_limit=32505856</span>"</div>
                         <div class="cmd" style="margin-top: 1rem;">$ sudo grub2-mkconfig -o /boot/grub2/grub.cfg</div>
@@ -335,10 +342,9 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td style="font-family: var(--font-mono);">iommu=pt</td>
-                                <td><strong>Pass-Through Mode</strong>: Bypass IOMMU translation for the GPU, reducing
-                                    overhead when
-                                    accessing the user-space pages.</td>
+                                <td style="font-family: var(--font-mono);">amd_iommu=off</td>
+                                <td><strong>Disable AMD IOMMU</strong>: Disables the AMD IOMMU entirely, which can
+                                    improve GPU memory access performance on Strix Halo unified memory setups.</td>
                             </tr>
                             <tr>
                                 <td style="font-family: var(--font-mono);">amdgpu.gttsize=126976</td>
