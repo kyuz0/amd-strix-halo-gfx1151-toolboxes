@@ -219,7 +219,8 @@
                         <img src="assets/pytorch-logo.png" alt="PyTorch Logo">
                     </div>
                     <h3>LLM Fine-tuning</h3>
-                    <p>Training environment. QLoRA and Full Fine-Tuning support for Gemma 3, Qwen 3, and generic models.</p>
+                    <p>Training environment. QLoRA and Full Fine-Tuning support for Gemma 3, Qwen 3, and generic models.
+                    </p>
                     <a href="https://github.com/kyuz0/amd-strix-halo-llm-finetuning" class="btn-link">View Repo -></a>
                 </div>
 
@@ -244,10 +245,14 @@
             <div class="grid-2">
                 <div>
                     <p style="margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.6;">
-                        <strong>Llama Cockpit</strong> is a Terminal User Interface (TUI) that makes it easier to manage llama.cpp toolboxes and GGUF weights. It also includes a server mode that doesn't require toolbox or distrobox, running natively via docker/podman to ensure compatibility with any Linux distribution.
+                        <strong>Llama Cockpit</strong> is a Terminal User Interface (TUI) that makes it easier to manage
+                        llama.cpp toolboxes and GGUF weights. It also includes a server mode that doesn't require
+                        toolbox or distrobox, running natively via docker/podman to ensure compatibility with any Linux
+                        distribution.
                     </p>
                     <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
-                        <a href="https://github.com/kyuz0/llama-toolboxes-cockpit" target="_blank" class="btn-primary">GitHub Repo -></a>
+                        <a href="https://github.com/kyuz0/llama-toolboxes-cockpit" target="_blank"
+                            class="btn-primary">GitHub Repo -></a>
                         <div class="terminal-block" style="flex-grow: 1; min-width: 280px; max-width: 480px;">
                             <div class="terminal-header">
                                 <div class="dot red"></div>
@@ -255,7 +260,9 @@
                                 <div class="dot green"></div>
                             </div>
                             <div class="terminal-body" style="padding: 0.6rem 1rem;">
-                                <div class="cmd" style="margin: 0; font-size: 0.8rem;"><span style="color: var(--text-secondary);">$</span> pipx install git+https://github.com/kyuz0/llama-toolboxes-cockpit.git</div>
+                                <div class="cmd" style="margin: 0; font-size: 0.8rem;"><span
+                                        style="color: var(--text-secondary);">$</span> pipx install
+                                    git+https://github.com/kyuz0/llama-toolboxes-cockpit.git</div>
                             </div>
                         </div>
                     </div>
@@ -302,7 +309,8 @@
                     </div>
                     <h3>Llama.cpp Benchmarks</h3>
                     <p>Token generation speeds (tokens/sec) across various GGUF models.</p>
-                    <a href="https://kyuz0.github.io/amd-strix-halo-toolboxes/" target="_blank" class="btn-link">View Benchmarks -></a>
+                    <a href="https://kyuz0.github.io/amd-strix-halo-toolboxes/" target="_blank" class="btn-link">View
+                        Benchmarks -></a>
                 </div>
 
                 <!-- vLLM Benchmarks -->
@@ -312,7 +320,8 @@
                     </div>
                     <h3>vLLM Benchmarks</h3>
                     <p>Peak multi-user throughput (tokens/sec) and RDMA/RoCE clustering performance.</p>
-                    <a href="https://kyuz0.github.io/amd-strix-halo-vllm-toolboxes/" target="_blank" class="btn-link">View Benchmarks -></a>
+                    <a href="https://kyuz0.github.io/amd-strix-halo-vllm-toolboxes/" target="_blank"
+                        class="btn-link">View Benchmarks -></a>
                 </div>
 
                 <!-- ComfyUI Benchmarks -->
@@ -322,7 +331,8 @@
                     </div>
                     <h3>ComfyUI Benchmarks</h3>
                     <p>Generation speeds (seconds/it) for HunyuanVideo, Wan 2.2, and Qwen image workflows.</p>
-                    <a href="https://kyuz0.github.io/amd-strix-halo-comfyui-toolboxes/" target="_blank" class="btn-link">View Benchmarks -></a>
+                    <a href="https://kyuz0.github.io/amd-strix-halo-comfyui-toolboxes/" target="_blank"
+                        class="btn-link">View Benchmarks -></a>
                 </div>
 
                 <!-- DwarfStar Benchmarks -->
@@ -332,7 +342,20 @@
                     </div>
                     <h3>DwarfStar Benchmarks</h3>
                     <p>Inference performance metrics (tokens/sec) for DeepSeek V4 Flash models.</p>
-                    <a href="https://kyuz0.github.io/strix-halo-ds4-toolbox/" target="_blank" class="btn-link">View Benchmarks -></a>
+                    <a href="https://kyuz0.github.io/strix-halo-ds4-toolbox/" target="_blank" class="btn-link">View
+                        Benchmarks -></a>
+                </div>
+
+                <!-- SWE-bench Verified Mini -->
+                <div class="toolbox-card">
+                    <div class="toolbox-icon">
+                        <img src="assets/swe-bench-logo.svg" alt="SWE-bench Logo">
+                    </div>
+                    <h3>SWE-bench Verified Mini</h3>
+                    <p>Coding capability and speed metrics on the SWE-bench Verified Mini dataset. Measures real-world
+                        execution on Strix Halo using accessible quantized models rather than full-precision server
+                        clusters.</p>
+                    <a href="https://pi-local-coding-bench.dev/" target="_blank" class="btn-link">View Benchmarks -></a>
                 </div>
             </div>
         </section>
@@ -402,7 +425,14 @@
                 <div
                     style="margin-bottom: 2rem; padding: 1.5rem; background: rgba(0, 164, 228, 0.05); border-radius: 8px; border-left: 2px solid var(--accent-blue);">
                     <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; margin: 0;">
-                        <strong>Performance Note:</strong> Benchmarking by <a href="https://github.com/urbanswelt" target="_blank" style="color: var(--accent-blue); text-decoration: underline;">Lars Urban</a> (<a href="https://github.com/kyuz0/amd-strix-halo-toolboxes/issues/66#issuecomment-4460612951" target="_blank" style="color: var(--accent-blue); text-decoration: underline;">Issue #66</a>) shows a 5-12% performance increase by setting <code style="color: var(--text-primary); font-family: var(--font-mono); font-size: 0.85em;">amd_iommu=off</code> instead of the previously recommended pass-through mode.
+                        <strong>Performance Note:</strong> Benchmarking by <a href="https://github.com/urbanswelt"
+                            target="_blank" style="color: var(--accent-blue); text-decoration: underline;">Lars
+                            Urban</a> (<a
+                            href="https://github.com/kyuz0/amd-strix-halo-toolboxes/issues/66#issuecomment-4460612951"
+                            target="_blank" style="color: var(--accent-blue); text-decoration: underline;">Issue
+                            #66</a>) shows a 5-12% performance increase by setting <code
+                            style="color: var(--text-primary); font-family: var(--font-mono); font-size: 0.85em;">amd_iommu=off</code>
+                        instead of the previously recommended pass-through mode.
                     </p>
                 </div>
 

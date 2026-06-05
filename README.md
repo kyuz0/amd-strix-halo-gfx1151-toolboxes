@@ -10,6 +10,7 @@ This is a collection of containerized environments for running GenAI workloads o
 *   **[LLM Fine-tuning](https://github.com/kyuz0/amd-strix-halo-llm-finetuning)** - Training & QLoRA
 *   **[Llama Cockpit](https://github.com/kyuz0/llama-toolboxes-cockpit)** - TUI control center for managing Llama.cpp toolboxes and models
 *   **[DwarfStar](https://github.com/kyuz0/strix-halo-ds4-toolbox)** - A small native inference engine optimized first for DeepSeek V4 Flash
+*   **[pi-bench](../pi-bench)** - Local coding benchmark repository for SWE-bench Verified Mini
 
 
 ## Host Config
