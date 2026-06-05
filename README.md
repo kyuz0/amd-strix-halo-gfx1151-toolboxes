@@ -8,6 +8,9 @@ This is a collection of containerized environments for running GenAI workloads o
 *   **[ComfyUI Toolboxes](https://github.com/kyuz0/amd-strix-halo-comfyui-toolboxes)** - Image & Video Generation (Flux, Wan, Hunyuan)
 *   **[vLLM Toolboxes](https://github.com/kyuz0/amd-strix-halo-vllm-toolboxes)** - High-performance Serving & Clustering
 *   **[LLM Fine-tuning](https://github.com/kyuz0/amd-strix-halo-llm-finetuning)** - Training & QLoRA
+*   **[Llama Cockpit](https://github.com/kyuz0/llama-toolboxes-cockpit)** - TUI control center for managing Llama.cpp toolboxes and models
+*   **[DwarfStar](https://github.com/kyuz0/strix-halo-ds4-toolbox)** - A small native inference engine optimized first for DeepSeek V4 Flash
+
 
 ## Host Config
 
@@ -31,6 +34,22 @@ sudo udevadm control --reload-rules && sudo udevadm trigger
 ```
 
 > **Note:** This Distrobox configuration has been tested on **Ubuntu 25.10** with **Mainline Kernel 6.18.7-061807**. To enable mainline kernels on Ubuntu, you can use the [Ubuntu Mainline Kernel Installer](https://github.com/bkw777/mainline).
+
+## Llama Cockpit (TUI)
+
+**[Llama Cockpit](https://github.com/kyuz0/llama-toolboxes-cockpit)** is a Terminal User Interface (TUI) that makes it easier to manage llama.cpp toolboxes and GGUF weights. It also includes a server mode that doesn't require toolbox or distrobox, running natively via docker/podman to ensure compatibility with any Linux distribution.
+
+### Installation
+
+Install via `pipx`:
+```sh
+pipx install git+https://github.com/kyuz0/llama-toolboxes-cockpit.git
+```
+
+### Usage
+```sh
+llama-cockpit
+```
 
 
 ## Links

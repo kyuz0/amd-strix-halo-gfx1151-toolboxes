@@ -26,7 +26,9 @@
             <a href="#about">The Project</a>
             <a href="#strix">What is Strix Halo?</a>
             <a href="#toolboxes">The Toolboxes</a>
+            <a href="#cockpit">Llama Cockpit</a>
             <a href="#tutorials">Tutorials</a>
+            <a href="#benchmarks">Benchmarks</a>
             <a href="#config">Host Config</a>
             <a href="#connect" style="color: var(--accent-red);">Community & Support</a>
         </div>
@@ -217,9 +219,50 @@
                         <img src="assets/pytorch-logo.png" alt="PyTorch Logo">
                     </div>
                     <h3>LLM Fine-tuning</h3>
-                    <p>Training environment. QLoRA and Full Fine-Tuning support for Gemma 3, Qwen 3, and generic models.
-                    </p>
+                    <p>Training environment. QLoRA and Full Fine-Tuning support for Gemma 3, Qwen 3, and generic models.</p>
                     <a href="https://github.com/kyuz0/amd-strix-halo-llm-finetuning" class="btn-link">View Repo -></a>
+                </div>
+
+                <!-- DwarfStar -->
+                <div class="toolbox-card">
+                    <div class="toolbox-icon">
+                        <img src="assets/deepseek-logo.svg" alt="DeepSeek Logo">
+                    </div>
+                    <h3>DwarfStar</h3>
+                    <p>A small native inference engine optimized first for DeepSeek V4 Flash.</p>
+                    <a href="https://github.com/kyuz0/strix-halo-ds4-toolbox" class="btn-link">View Repo -></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Llama Cockpit -->
+        <section id="cockpit" class="section">
+            <div class="section-header">
+                <h2>Llama Cockpit</h2>
+                <span style="font-family: var(--font-mono); color: var(--accent-blue);">// TUI CONTAINER MANAGER</span>
+            </div>
+            <div class="grid-2">
+                <div>
+                    <p style="margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.6;">
+                        <strong>Llama Cockpit</strong> is a Terminal User Interface (TUI) that makes it easier to manage llama.cpp toolboxes and GGUF weights. It also includes a server mode that doesn't require toolbox or distrobox, running natively via docker/podman to ensure compatibility with any Linux distribution.
+                    </p>
+                    <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+                        <a href="https://github.com/kyuz0/llama-toolboxes-cockpit" target="_blank" class="btn-primary">GitHub Repo -></a>
+                        <div class="terminal-block" style="flex-grow: 1; min-width: 280px; max-width: 480px;">
+                            <div class="terminal-header">
+                                <div class="dot red"></div>
+                                <div class="dot yellow"></div>
+                                <div class="dot green"></div>
+                            </div>
+                            <div class="terminal-body" style="padding: 0.6rem 1rem;">
+                                <div class="cmd" style="margin: 0; font-size: 0.8rem;"><span style="color: var(--text-secondary);">$</span> pipx install git+https://github.com/kyuz0/llama-toolboxes-cockpit.git</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="assets/cockpit-demo.gif" alt="Llama Cockpit Demo"
+                        style="width: 100%; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
                 </div>
             </div>
         </section>
@@ -241,6 +284,56 @@
                 <div class="swiper-pagination"></div>
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
+            </div>
+        </section>
+
+        <!-- Benchmarks -->
+        <section id="benchmarks" class="section">
+            <div class="section-header">
+                <h2>Performance Benchmarks</h2>
+                <span style="font-family: var(--font-mono); color: var(--accent-red);">// HARDWARE CAPABILITIES</span>
+            </div>
+
+            <div class="toolbox-grid">
+                <!-- Llama.cpp Benchmarks -->
+                <div class="toolbox-card">
+                    <div class="toolbox-icon">
+                        <img src="assets/llama-cpp-logo.png" alt="Llama.cpp Logo">
+                    </div>
+                    <h3>Llama.cpp Benchmarks</h3>
+                    <p>Token generation speeds (tokens/sec) across various GGUF models.</p>
+                    <a href="https://kyuz0.github.io/amd-strix-halo-toolboxes/" target="_blank" class="btn-link">View Benchmarks -></a>
+                </div>
+
+                <!-- vLLM Benchmarks -->
+                <div class="toolbox-card">
+                    <div class="toolbox-icon">
+                        <img src="assets/vllm-logo.png" alt="vLLM Logo">
+                    </div>
+                    <h3>vLLM Benchmarks</h3>
+                    <p>Peak multi-user throughput (tokens/sec) and RDMA/RoCE clustering performance.</p>
+                    <a href="https://kyuz0.github.io/amd-strix-halo-vllm-toolboxes/" target="_blank" class="btn-link">View Benchmarks -></a>
+                </div>
+
+                <!-- ComfyUI Benchmarks -->
+                <div class="toolbox-card">
+                    <div class="toolbox-icon">
+                        <img src="assets/comfy-logo.png" alt="ComfyUI Logo">
+                    </div>
+                    <h3>ComfyUI Benchmarks</h3>
+                    <p>Generation speeds (seconds/it) for HunyuanVideo, Wan 2.2, and Qwen image workflows.</p>
+                    <a href="https://kyuz0.github.io/amd-strix-halo-comfyui-toolboxes/" target="_blank" class="btn-link">View Benchmarks -></a>
+                </div>
+
+                <!-- DwarfStar Benchmarks -->
+                <div class="toolbox-card">
+                    <div class="toolbox-icon">
+                        <img src="assets/deepseek-logo.svg" alt="DeepSeek Logo">
+                    </div>
+                    <h3>DwarfStar Benchmarks</h3>
+                    <p>Inference performance metrics (tokens/sec) for DeepSeek V4 Flash models.</p>
+                    <a href="https://kyuz0.github.io/strix-halo-ds4-toolbox/" target="_blank" class="btn-link">View Benchmarks -></a>
+                </div>
             </div>
         </section>
 
