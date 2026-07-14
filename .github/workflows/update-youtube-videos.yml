@@ -1,0 +1,41 @@
+name: Update YouTube videos
+
+on:
+  schedule:
+    - cron: "17 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-youtube-videos
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Update cached playlist
+        run: python scripts/update-youtube-videos.py
+
+      - name: Commit playlist changes
+        run: |
+          if git diff --quiet -- docs/videos.json; then
+            echo "No playlist changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/videos.json
+          git commit -m "docs: update YouTube videos"
+          git push

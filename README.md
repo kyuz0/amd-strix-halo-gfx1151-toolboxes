@@ -13,17 +13,28 @@ This is a collection of containerized environments for running GenAI workloads o
 *   **[pi-bench](../pi-bench)** - Local coding benchmark repository for SWE-bench Verified Mini
 
 
+## Recommended Workflow: Llama Cockpit
+
+**[Llama Cockpit](https://github.com/kyuz0/llama-toolboxes-cockpit)** is the easiest way to use the llama.cpp toolboxes. The TUI handles the differences between operating systems and can manage Toolbox or Distrobox environments. Its server mode can also run directly through Docker or Podman.
+
+```sh
+pipx install git+https://github.com/kyuz0/llama-toolboxes-cockpit.git
+llama-cockpit
+```
+
+The host configuration below still applies. If you prefer to create and run containers yourself, use the manual Toolbox or Distrobox instructions on the [project website](https://kyuz0.github.io/amd-strix-halo-toolboxes/).
+
 ## Host Config
 
 I tested these toolboxes on the following Fedora configuration. Fedora has a very strong and seamless implementation of `toolbox`.
 
 *   **OS**: Fedora 43 (Linux 6.18.9-200)
-*   **Kernel Parameters**: `iommu=pt amdgpu.gttsize=126976 ttm.pages_limit=32505856`
+*   **Kernel Parameters**: `amd_iommu=off amdgpu.gttsize=126976 ttm.pages_limit=32505856` (see per-OS setup below)
 *   **Tuning**: `tuned` via `accelerator-performance` profile.
 
-**Ubuntu Users:** The default `toolbox` package on Ubuntu handles permissions differently than on Fedora, which can break GPU access. We recommend using **Distrobox** instead. 
+**Ubuntu / Debian / Ryzen AI Halo Users:** The default `toolbox` package on Ubuntu/Debian handles permissions differently than on Fedora, which can break GPU access. We recommend using **Distrobox** instead.
 
-If you are on Ubuntu, you must first set up these specific permissions:
+If you are on Ubuntu, Debian, or AMD's Ryzen AI Halo Debian-based distro, you must first set up these specific permissions:
 
 ```sh
 # Add your user to required GPU groups
@@ -35,22 +46,42 @@ sudo udevadm control --reload-rules && sudo udevadm trigger
 ```
 
 > **Note:** This Distrobox configuration has been tested on **Ubuntu 25.10** with **Mainline Kernel 6.18.7-061807**. To enable mainline kernels on Ubuntu, you can use the [Ubuntu Mainline Kernel Installer](https://github.com/bkw777/mainline).
+>
+> **Ryzen AI Halo:** AMD's Ryzen AI Halo systems ship with a **Debian-based** distribution. The same Distrobox configuration and GPU permission setup above apply to those systems as well.
 
-## Llama Cockpit (TUI)
+### Ryzen AI Halo / Debian Kernel Parameters (systemd-boot)
 
-**[Llama Cockpit](https://github.com/kyuz0/llama-toolboxes-cockpit)** is a Terminal User Interface (TUI) that makes it easier to manage llama.cpp toolboxes and GGUF weights. It also includes a server mode that doesn't require toolbox or distrobox, running natively via docker/podman to ensure compatibility with any Linux distribution.
+Ryzen AI Halo (Debian-based) uses **systemd-boot** (not GRUB). Kernel parameters are set differently:
 
-### Installation
+**Memory configuration** — use `amd-ttm` instead of kernel parameters:
 
-Install via `pipx`:
 ```sh
-pipx install git+https://github.com/kyuz0/llama-toolboxes-cockpit.git
+# Install pipx and amd-debug-tools
+sudo apt install pipx
+pipx ensurepath
+pipx install amd-debug-tools
+
+# Set unified memory to ~124 GB (replaces amdgpu.gttsize + ttm.pages_limit)
+sudo amd-ttm --set 124
+# Reboot when prompted
 ```
 
-### Usage
+**IOMMU** — set `amd_iommu=off` via systemd-boot's cmdline file:
+
 ```sh
-llama-cockpit
+# Add amd_iommu=off without removing the existing kernel parameters
+sudoedit /etc/kernel/cmdline
+
+# Rebuild the systemd-boot entry for the running kernel
+sudo kernel-install add "$(uname -r)" \
+  "/boot/vmlinuz-$(uname -r)" \
+  "/boot/initrd.img-$(uname -r)"
+
+# Reboot to apply
+sudo reboot
 ```
+
+> **Important:** Preserve the existing contents of `/etc/kernel/cmdline`; it contains the complete kernel command line. Do not edit generated entries in `/boot/loader/entries/` directly.
 
 
 ## Links

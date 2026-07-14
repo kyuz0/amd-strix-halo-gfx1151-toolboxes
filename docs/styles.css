@@ -656,47 +656,370 @@ footer {
     font-weight: bold;
 }
 
-/* OS Tabs */
+/* Host setup workflow */
+.setup-stage {
+    margin-top: 3.5rem;
+}
+
+.setup-stage + .setup-stage {
+    margin-top: 4.5rem;
+    padding-top: 3.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.setup-stage-header {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 1rem;
+    align-items: start;
+    margin-bottom: 2rem;
+}
+
+.setup-stage-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 4.5rem;
+    padding: 0.4rem 0.75rem;
+    border: 1px solid rgba(237, 28, 36, 0.5);
+    border-radius: 999px;
+    background: rgba(237, 28, 36, 0.1);
+    color: var(--accent-red);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.setup-stage-title {
+    margin: 0 0 0.35rem;
+    color: var(--text-primary);
+    font-size: 1.45rem;
+    line-height: 1.3;
+}
+
+.setup-stage-intro {
+    max-width: 960px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* Recommended and manual container workflows */
+.recommended-workflow {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem;
+    border: 1px solid rgba(237, 28, 36, 0.42);
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(237, 28, 36, 0.1), rgba(255, 255, 255, 0.018) 58%);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+.recommended-label {
+    display: inline-flex;
+    margin-bottom: 0.8rem;
+    padding: 0.3rem 0.6rem;
+    border: 1px solid rgba(237, 28, 36, 0.5);
+    border-radius: 999px;
+    color: var(--accent-red);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.recommended-workflow h4 {
+    margin: 0 0 0.75rem;
+    color: var(--text-primary);
+    font-size: 1.3rem;
+}
+
+.recommended-workflow p {
+    margin: 0 0 1.25rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.recommended-workflow-terminal {
+    min-width: 0;
+    margin: 0;
+}
+
+.manual-setup {
+    margin-top: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.018);
+    overflow: hidden;
+}
+
+.manual-setup > summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.15rem 1.25rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    list-style: none;
+    transition: background 0.2s;
+}
+
+.manual-setup > summary::-webkit-details-marker {
+    display: none;
+}
+
+.manual-setup > summary:hover {
+    background: rgba(255, 255, 255, 0.035);
+}
+
+.manual-setup > summary:focus-visible {
+    outline: 2px solid var(--accent-blue);
+    outline-offset: -2px;
+}
+
+.manual-setup > summary::after {
+    content: "+";
+    color: var(--accent-red);
+    font-family: var(--font-mono);
+    font-size: 1.35rem;
+    line-height: 1;
+}
+
+.manual-setup[open] > summary::after {
+    content: "\2212";
+}
+
+.manual-setup > summary span {
+    display: grid;
+    gap: 0.25rem;
+}
+
+.manual-setup > summary small {
+    color: var(--text-secondary);
+    font-size: 0.82rem;
+    font-weight: 400;
+}
+
+.manual-setup-body {
+    padding: 0 1.25rem 1.25rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.manual-setup-intro {
+    max-width: 960px;
+    margin: 1.25rem 0;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* Contained OS guide and tabs */
+.os-guide {
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.018);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+.os-guide-toolbar {
+    padding: 1rem 1.25rem 0;
+    background: rgba(255, 255, 255, 0.035);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.os-guide-label {
+    display: block;
+    margin: 0 0 0.75rem 0.25rem;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
 .os-tabs {
     display: flex;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 1px;
+    gap: 0.5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+}
+
+.os-tabs::-webkit-scrollbar {
+    display: none;
 }
 
 .os-tab-btn {
+    flex: 0 0 auto;
+    margin-bottom: -1px;
+    padding: 0.75rem 1rem;
+    border: 1px solid transparent;
+    border-bottom: none;
+    border-radius: 7px 7px 0 0;
     background: transparent;
-    border: none;
     color: var(--text-secondary);
     font-family: var(--font-mono);
-    font-size: 1rem;
-    padding: 0.8rem 1.5rem;
+    font-size: 0.88rem;
+    line-height: 1.3;
+    white-space: nowrap;
     cursor: pointer;
-    border-bottom: 2px solid transparent;
-    transition: all 0.2s;
-    margin-bottom: -1px;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
 }
 
 .os-tab-btn:hover {
+    background: rgba(255, 255, 255, 0.04);
     color: var(--text-primary);
 }
 
+.os-tab-btn:focus-visible {
+    outline: 2px solid var(--accent-blue);
+    outline-offset: -2px;
+}
+
 .os-tab-btn.active {
+    border-color: var(--border-color);
+    background: #101010;
     color: var(--accent-red);
-    border-bottom-color: var(--accent-red);
+}
+
+.os-tab-panels {
+    background: #101010;
 }
 
 .os-tab-content {
     display: none;
+    padding: 2rem;
     animation: fadeIn 0.3s ease;
 }
 
 .os-tab-content.active {
     display: block;
+}
+
+.config-task-heading {
+    margin: 0 0 0.75rem;
+    color: var(--accent-red);
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+.os-tab-content > .config-task-heading:not(:first-child) {
+    margin-top: 2.75rem;
+    padding-top: 2.25rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.performance-note {
+    display: block;
+    margin-top: 0.75rem;
+    padding-left: 0.75rem;
+    border-left: 2px solid var(--accent-blue);
+}
+
+@media (max-width: 768px) {
+    .setup-stage {
+        margin-top: 2.75rem;
+    }
+
+    .setup-stage + .setup-stage {
+        margin-top: 3.5rem;
+        padding-top: 2.75rem;
+    }
+
+    .setup-stage-header {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .setup-stage-number {
+        justify-self: start;
+    }
+
+    .setup-stage-title {
+        font-size: 1.3rem;
+    }
+
+    .recommended-workflow {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        padding: 1.25rem;
+    }
+
+    .manual-setup-body {
+        padding: 0 0.75rem 0.75rem;
+    }
+
+    .os-guide-toolbar {
+        padding: 0.9rem;
+    }
+
+    .os-tabs {
+        flex-direction: column;
+        overflow: visible;
+        gap: 0.4rem;
+    }
+
+    .os-tab-btn {
+        width: 100%;
+        margin: 0;
+        padding: 0.7rem 0.8rem;
+        border: 1px solid transparent;
+        border-radius: 6px;
+        font-size: 0.8rem;
+        text-align: left;
+        white-space: normal;
+    }
+
+    .os-tab-btn.active {
+        border-color: rgba(237, 28, 36, 0.45);
+        background: rgba(237, 28, 36, 0.09);
+    }
+
+    .os-tab-content {
+        padding: 1.25rem;
+    }
+
+    .os-tab-content .table-responsive {
+        overflow: visible;
+    }
+
+    .os-tab-content table,
+    .os-tab-content tbody,
+    .os-tab-content tr,
+    .os-tab-content td {
+        display: block;
+        width: 100%;
+    }
+
+    .os-tab-content thead {
+        display: none;
+    }
+
+    .os-tab-content tr {
+        margin-bottom: 0.75rem;
+        overflow: hidden;
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.015);
+    }
+
+    .os-tab-content td {
+        border: none;
+    }
+
+    .os-tab-content td:first-child {
+        border-bottom: 1px solid var(--border-color);
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--text-primary);
+        font-size: 0.82rem;
+        font-weight: 700;
+    }
 }
 
 @keyframes fadeIn {

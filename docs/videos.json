@@ -1,0 +1,96 @@
+{
+  "playlistId": "PLNg09XqZv0dFzHP1LxYb7tIsK_Pk94mK_",
+  "title": "Strix Halo: Local AI on AMD Ryzen AI Max 395",
+  "videos": [
+    {
+      "id": "PkKXm_mKCCM",
+      "title": "GLM 5.2 on Dual Strix Halo (256GB): Worth it?",
+      "url": "https://www.youtube.com/watch?v=PkKXm_mKCCM",
+      "thumbnail": "https://i.ytimg.com/vi/PkKXm_mKCCM/hqdefault.jpg"
+    },
+    {
+      "id": "Cfl3TS7ME5s",
+      "title": "DeepSeek V4 Flash Inference on Strix Halo: ds4, Quantizations, Distributed Inference and Benchmarks",
+      "url": "https://www.youtube.com/watch?v=Cfl3TS7ME5s",
+      "thumbnail": "https://i.ytimg.com/vi/Cfl3TS7ME5s/hqdefault.jpg"
+    },
+    {
+      "id": "JyS8A-5LIY8",
+      "title": "Local Coding Agents on Strix Halo and R9700: Pi, Opencode, and SWE-bench Mini Benchmarks",
+      "url": "https://www.youtube.com/watch?v=JyS8A-5LIY8",
+      "thumbnail": "https://i.ytimg.com/vi/JyS8A-5LIY8/hqdefault.jpg"
+    },
+    {
+      "id": "MI0Pm1d6YF4",
+      "title": "MTP (Multi-Token Prediction): 2x Faster Token Generation on AMD Strix Halo & Radeon 9700 AI Pro",
+      "url": "https://www.youtube.com/watch?v=MI0Pm1d6YF4",
+      "thumbnail": "https://i.ytimg.com/vi/MI0Pm1d6YF4/hqdefault.jpg"
+    },
+    {
+      "id": "0mXYp6d0yjw",
+      "title": "Strix Halo & R9700 AI PRO Updates: Qwen 3.6 and Gemma 4 Support, ROCm 7.2.2 and Two New Series",
+      "url": "https://www.youtube.com/watch?v=0mXYp6d0yjw",
+      "thumbnail": "https://i.ytimg.com/vi/0mXYp6d0yjw/hqdefault.jpg"
+    },
+    {
+      "id": "F8aOOp8VxFs",
+      "title": "Fast Finetuning of Gemma-3, Qwen-3 and GPT-OSS on Strix Halo using Unsloth and Multi-Node Setups",
+      "url": "https://www.youtube.com/watch?v=F8aOOp8VxFs",
+      "thumbnail": "https://i.ytimg.com/vi/F8aOOp8VxFs/hqdefault.jpg"
+    },
+    {
+      "id": "O57ideUzzTg",
+      "title": "ComfyUI Strix Halo Toolbox for Image and Video Generation (LTX2, Qwen Image, WAN 2.2, Hunyuan 1.5)",
+      "url": "https://www.youtube.com/watch?v=O57ideUzzTg",
+      "thumbnail": "https://i.ytimg.com/vi/O57ideUzzTg/hqdefault.jpg"
+    },
+    {
+      "id": "nnB8a3OHS2E",
+      "title": "Low-Latency Strix Halo Cluster with RDMA (RoCE/Intel E810) and vLLM, Framework Desktop Boards",
+      "url": "https://www.youtube.com/watch?v=nnB8a3OHS2E",
+      "thumbnail": "https://i.ytimg.com/vi/nnB8a3OHS2E/hqdefault.jpg"
+    },
+    {
+      "id": "Q-Df49aVnMY",
+      "title": "Kimi-K2(1T)/GLM 4.7(355B) on a 4-Node Strix Halo Cluster - 512GB of Unified Memory",
+      "url": "https://www.youtube.com/watch?v=Q-Df49aVnMY",
+      "thumbnail": "https://i.ytimg.com/vi/Q-Df49aVnMY/hqdefault.jpg"
+    },
+    {
+      "id": "Hdg7zL3pcIs",
+      "title": "ROCm+Linux Support on Strix Halo: It's finally stable in 2026!",
+      "url": "https://www.youtube.com/watch?v=Hdg7zL3pcIs",
+      "thumbnail": "https://i.ytimg.com/vi/Hdg7zL3pcIs/hqdefault.jpg"
+    },
+    {
+      "id": "wAIzlGwEAO0",
+      "title": "Running vLLM on Strix Halo (AMD Ryzen AI MAX) + ROCm Performance Updates",
+      "url": "https://www.youtube.com/watch?v=wAIzlGwEAO0",
+      "thumbnail": "https://i.ytimg.com/vi/wAIzlGwEAO0/hqdefault.jpg"
+    },
+    {
+      "id": "0cIcth224hk",
+      "title": "Building a Two-Node AMD Strix Halo Cluster for LLMs with llama.cpp RPC (MiniMax-M2 & GLM 4.6)",
+      "url": "https://www.youtube.com/watch?v=0cIcth224hk",
+      "thumbnail": "https://i.ytimg.com/vi/0cIcth224hk/hqdefault.jpg"
+    },
+    {
+      "id": "nxugSRDg_jg",
+      "title": "Finetuning LLMs on Strix Halo – Full, LoRA, and QLoRA on Gemma-3, Qwen-3, and GPT-OSS-20B",
+      "url": "https://www.youtube.com/watch?v=nxugSRDg_jg",
+      "thumbnail": "https://i.ytimg.com/vi/nxugSRDg_jg/hqdefault.jpg"
+    },
+    {
+      "id": "jeBqYNWRLEc",
+      "title": "VibeVoice (Speech Generation/Voice Cloning) on Framework Desktop with Strix Halo (AMD AI Ryzen MAX+)",
+      "url": "https://www.youtube.com/watch?v=jeBqYNWRLEc",
+      "thumbnail": "https://i.ytimg.com/vi/jeBqYNWRLEc/hqdefault.jpg"
+    },
+    {
+      "id": "7-E0a6sGWgs",
+      "title": "Run Qwen Image and WAN 2.2 on Framework Desktop with Strix Halo (AMD AI Ryzen MAX+ 395) - Full Guide",
+      "url": "https://www.youtube.com/watch?v=7-E0a6sGWgs",
+      "thumbnail": "https://i.ytimg.com/vi/7-E0a6sGWgs/hqdefault.jpg"
+    }
+  ]
+}
