@@ -488,7 +488,13 @@
                                             style="color: var(--accent-blue); text-decoration: underline;">Issue
                                             #66</a>) shows a 5-12% performance increase by setting <code
                                             style="color: var(--text-primary); font-family: var(--font-mono); font-size: 0.85em;">amd_iommu=off</code>
-                                        instead of the previously recommended pass-through mode.</span></td>
+                                        instead of the previously recommended pass-through mode.</span>
+                                        <span class="iommu-warning"><strong>Warning:</strong> Disabling IOMMU prevents
+                                            the NPU from working and removes protection against
+                                            <a href="https://en.wikipedia.org/wiki/DMA_attack" target="_blank"
+                                                rel="noopener noreferrer">DMA attacks</a> from rogue or compromised
+                                            external devices. Leave IOMMU enabled if you need the NPU or DMA
+                                            isolation.</span></td>
                                 </tr>
                                 <tr>
                                     <td style="font-family: var(--font-mono);">amdgpu.gttsize=126976</td>
@@ -594,7 +600,13 @@
                                             style="color: var(--accent-blue); text-decoration: underline;">Issue
                                             #66</a>) shows a 5-12% performance increase by setting <code
                                             style="color: var(--text-primary); font-family: var(--font-mono); font-size: 0.85em;">amd_iommu=off</code>
-                                        instead of the previously recommended pass-through mode.</span></td>
+                                        instead of the previously recommended pass-through mode.</span>
+                                        <span class="iommu-warning"><strong>Warning:</strong> Disabling IOMMU prevents
+                                            the NPU from working and removes protection against
+                                            <a href="https://en.wikipedia.org/wiki/DMA_attack" target="_blank"
+                                                rel="noopener noreferrer">DMA attacks</a> from rogue or compromised
+                                            external devices. Leave IOMMU enabled if you need the NPU or DMA
+                                            isolation.</span></td>
                                 </tr>
                                 <tr>
                                     <td style="font-family: var(--font-mono);">amdgpu.gttsize=126976</td>
@@ -688,6 +700,12 @@
                         Do <em>not</em> edit boot entries in <code style="color: var(--text-primary);">/boot/loader/entries/</code>
                         directly — they are regenerated on each kernel update.
                     </p>
+                    <div class="iommu-warning" role="note" aria-label="Important IOMMU trade-offs">
+                        <strong>Warning:</strong> Disabling IOMMU prevents the NPU from working
+                        and removes protection against <a href="https://en.wikipedia.org/wiki/DMA_attack"
+                            target="_blank" rel="noopener noreferrer">DMA attacks</a> from rogue or compromised
+                        external devices. Leave IOMMU enabled if you need the NPU or DMA isolation.
+                    </div>
                     <div class="terminal-block" style="margin-bottom: 2rem;">
                         <div class="terminal-header" style="background: #333; padding: 0.5rem; text-align: left;">
                             <span style="color: #bbb; font-family: var(--font-mono); font-size: 0.8rem;">root@halo:~</span>

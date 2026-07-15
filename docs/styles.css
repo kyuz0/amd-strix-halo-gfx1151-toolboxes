@@ -922,6 +922,24 @@ footer {
     border-left: 2px solid var(--accent-blue);
 }
 
+.iommu-warning {
+    display: block;
+    margin-top: 0.75rem;
+    padding-left: 0.75rem;
+    border-left: 2px solid var(--accent-red);
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.iommu-warning strong {
+    color: var(--text-primary);
+}
+
+.iommu-warning a {
+    color: var(--accent-blue);
+    text-decoration: underline;
+}
+
 @media (max-width: 768px) {
     .setup-stage {
         margin-top: 2.75rem;
