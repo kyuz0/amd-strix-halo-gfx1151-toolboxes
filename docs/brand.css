@@ -1,0 +1,20 @@
+/*
+ * Channel visual tokens, mirrored locally so GitHub Pages has no dependency on
+ * the separate youtube-video-scripts checkout.
+ */
+:root {
+    --brand-ink: #171a1d;
+    --brand-charcoal: #25292e;
+    --brand-panel: #34383d;
+    --brand-panel-quiet: #50565c;
+    --brand-muted: #8f969e;
+    --brand-text: #f1f3f5;
+    --brand-white: #ffffff;
+    --brand-gold: #f2b544;
+    --brand-amber: #8a5a00;
+    --brand-gold-pale: #f7e7be;
+    --brand-font-ui: "Bitstream Vera Sans", "DejaVu Sans", Arial, sans-serif;
+    --brand-radius-card: 18px;
+    --brand-border: 1px solid color-mix(in srgb, var(--brand-muted) 42%, transparent);
+    --brand-shadow: 0 16px 40px rgb(0 0 0 / 28%);
+}

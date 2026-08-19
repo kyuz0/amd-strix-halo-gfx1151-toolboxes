@@ -5,17 +5,17 @@ html {
 }
 
 :root {
-    --bg-color: #050505;
-    --card-bg: #0f0f0f;
-    --text-primary: #e0e0e0;
-    --text-secondary: #a0a0a0;
-    --accent-red: #ED1C24;
-    /* AMD Red */
+    --bg-color: var(--brand-ink);
+    --card-bg: var(--brand-charcoal);
+    --text-primary: var(--brand-text);
+    --text-secondary: var(--brand-muted);
+    --accent-red: var(--brand-gold);
+    /* Channel gold */
     --accent-green: #00ff41;
     /* Terminal/Hacker Green */
     --accent-blue: #00a4e4;
     /* Tech Blue */
-    --border-color: #333;
+    --border-color: var(--brand-panel-quiet);
     --font-main: 'Inter', system-ui, -apple-system, sans-serif;
     --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 }
@@ -47,7 +47,7 @@ a:hover {
 .navbar {
     position: sticky;
     top: 0;
-    background: rgba(5, 5, 5, 0.95);
+    background: rgba(23, 26, 29, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
     z-index: 1000;
@@ -117,7 +117,7 @@ a:hover {
 .hero {
     padding: 6rem 2rem;
     text-align: center;
-    background: radial-gradient(circle at center, rgba(237, 28, 36, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle at center, rgba(242, 181, 68, 0.1) 0%, transparent 70%);
 }
 
 .hero h1 {
@@ -407,7 +407,8 @@ td {
 }
 
 .btn-primary:hover {
-    background: #c41219;
+    background: var(--brand-gold-pale);
+    color: var(--brand-ink);
 }
 
 .btn-secondary {
@@ -488,7 +489,7 @@ footer {
         top: 100%;
         left: 0;
         right: 0;
-        background: rgba(5, 5, 5, 0.98);
+        background: rgba(23, 26, 29, 0.98);
         padding: 1rem;
         flex-direction: column;
         align-items: center;
@@ -645,7 +646,8 @@ footer {
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-    background-color: #c41219;
+    background-color: var(--brand-gold-pale);
+    color: var(--brand-ink) !important;
     transform: translateY(-50%) scale(1.1);
     /* Keep the Y translation when scaling */
 }
@@ -681,9 +683,9 @@ footer {
     justify-content: center;
     min-width: 4.5rem;
     padding: 0.4rem 0.75rem;
-    border: 1px solid rgba(237, 28, 36, 0.5);
+    border: 1px solid rgba(242, 181, 68, 0.5);
     border-radius: 999px;
-    background: rgba(237, 28, 36, 0.1);
+    background: rgba(242, 181, 68, 0.1);
     color: var(--accent-red);
     font-family: var(--font-mono);
     font-size: 0.78rem;
@@ -712,9 +714,9 @@ footer {
     gap: 2rem;
     align-items: center;
     padding: 2rem;
-    border: 1px solid rgba(237, 28, 36, 0.42);
+    border: 1px solid rgba(242, 181, 68, 0.42);
     border-radius: 12px;
-    background: linear-gradient(135deg, rgba(237, 28, 36, 0.1), rgba(255, 255, 255, 0.018) 58%);
+    background: linear-gradient(135deg, rgba(242, 181, 68, 0.1), rgba(255, 255, 255, 0.018) 58%);
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
 }
 
@@ -722,7 +724,7 @@ footer {
     display: inline-flex;
     margin-bottom: 0.8rem;
     padding: 0.3rem 0.6rem;
-    border: 1px solid rgba(237, 28, 36, 0.5);
+    border: 1px solid rgba(242, 181, 68, 0.5);
     border-radius: 999px;
     color: var(--accent-red);
     font-family: var(--font-mono);
@@ -995,8 +997,8 @@ footer {
     }
 
     .os-tab-btn.active {
-        border-color: rgba(237, 28, 36, 0.45);
-        background: rgba(237, 28, 36, 0.09);
+        border-color: rgba(242, 181, 68, 0.45);
+        background: rgba(242, 181, 68, 0.09);
     }
 
     .os-tab-content {
