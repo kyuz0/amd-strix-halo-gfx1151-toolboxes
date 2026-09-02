@@ -445,23 +445,43 @@
                     aria-labelledby="tab-opt-fedora">
                     <h4 class="config-task-heading">Kernel parameters and unified memory</h4>
                     <p style="color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.6;">
-                        Add these parameters to <code style="color: var(--text-primary);">GRUB_CMDLINE_LINUX</code> in
-                        <code style="color: var(--text-primary);">/etc/default/grub</code>, then regenerate the GRUB config.
+                        Update <code style="color: var(--text-primary);">GRUB_CMDLINE_LINUX</code> without replacing
+                        any options already present, then rebuild the GRUB configuration.
                     </p>
-                    <div class="terminal-block" style="margin-bottom: 2rem;">
-                        <div class="terminal-header" style="background: #333; padding: 0.5rem; text-align: left;">
-                            <span
-                                style="color: #bbb; font-family: var(--font-mono); font-size: 0.8rem;">root@fedora:~</span>
+                    <div class="config-procedure" style="margin-bottom: 2rem;">
+                        <div class="procedure-step">
+                            <div class="procedure-step-header">
+                                <span class="procedure-step-number">1</span>
+                                <div>
+                                    <h5>Open the GRUB configuration</h5>
+                                    <p>Open <code>/etc/default/grub</code> with Vim, or substitute your preferred editor.</p>
+                                </div>
+                            </div>
+                            <div class="cmd">sudo vim /etc/default/grub</div>
                         </div>
-                        <div class="terminal-body" style="overflow-x: auto;">
-                            <div class="cmd">$ sudo vim /etc/default/grub</div>
-                            <div class="output"
-                                style="color: var(--text-primary); white-space: normal; overflow-wrap: anywhere;">
-                                GRUB_CMDLINE_LINUX="... <span style="color: var(--accent-red);">amd_iommu=off
-                                    amdgpu.gttsize=126976
-                                    ttm.pages_limit=32505856</span>"</div>
-                            <div class="cmd" style="margin-top: 1rem;">$ sudo grub2-mkconfig -o /boot/grub2/grub.cfg</div>
-                            <div class="cmd" style="margin-top: 0.5rem;">$ sudo reboot</div>
+
+                        <div class="procedure-step">
+                            <div class="procedure-step-header">
+                                <span class="procedure-step-number">2</span>
+                                <div>
+                                    <h5>Append the kernel parameters</h5>
+                                    <p>Find <code>GRUB_CMDLINE_LINUX="..."</code>. Before its closing quote, add a
+                                        space followed by the parameters below. Keep the existing contents.</p>
+                                </div>
+                            </div>
+                            <div class="cmd config-value" data-copy-label="Copy kernel parameters">amd_iommu=off amdgpu.gttsize=126976 ttm.pages_limit=32505856</div>
+                        </div>
+
+                        <div class="procedure-step">
+                            <div class="procedure-step-header">
+                                <span class="procedure-step-number">3</span>
+                                <div>
+                                    <h5>Save, rebuild GRUB, and reboot</h5>
+                                    <p>Save the file and exit the editor before running these commands.</p>
+                                </div>
+                            </div>
+                            <div class="cmd">sudo grub2-mkconfig -o /boot/grub2/grub.cfg</div>
+                            <div class="cmd">sudo reboot</div>
                         </div>
                     </div>
 
@@ -558,22 +578,43 @@
                     aria-labelledby="tab-opt-ubuntu">
                     <h4 class="config-task-heading">Kernel parameters and unified memory</h4>
                     <p style="color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.6;">
-                        Add these parameters to <code style="color: var(--text-primary);">GRUB_CMDLINE_LINUX</code> in
-                        <code style="color: var(--text-primary);">/etc/default/grub</code>, then regenerate the GRUB config.
+                        Update <code style="color: var(--text-primary);">GRUB_CMDLINE_LINUX</code> without replacing
+                        any options already present, then rebuild the GRUB configuration.
                     </p>
-                    <div class="terminal-block" style="margin-bottom: 2rem;">
-                        <div class="terminal-header" style="background: #333; padding: 0.5rem; text-align: left;">
-                            <span style="color: #bbb; font-family: var(--font-mono); font-size: 0.8rem;">root@ubuntu:~</span>
+                    <div class="config-procedure" style="margin-bottom: 2rem;">
+                        <div class="procedure-step">
+                            <div class="procedure-step-header">
+                                <span class="procedure-step-number">1</span>
+                                <div>
+                                    <h5>Open the GRUB configuration</h5>
+                                    <p>Open <code>/etc/default/grub</code> with Vim, or substitute your preferred editor.</p>
+                                </div>
+                            </div>
+                            <div class="cmd">sudo vim /etc/default/grub</div>
                         </div>
-                        <div class="terminal-body" style="overflow-x: auto;">
-                            <div class="cmd">$ sudo vim /etc/default/grub</div>
-                            <div class="output"
-                                style="color: var(--text-primary); white-space: normal; overflow-wrap: anywhere;">
-                                GRUB_CMDLINE_LINUX="... <span style="color: var(--accent-red);">amd_iommu=off
-                                    amdgpu.gttsize=126976
-                                    ttm.pages_limit=32505856</span>"</div>
-                            <div class="cmd" style="margin-top: 1rem;">$ sudo update-grub</div>
-                            <div class="cmd" style="margin-top: 0.5rem;">$ sudo reboot</div>
+
+                        <div class="procedure-step">
+                            <div class="procedure-step-header">
+                                <span class="procedure-step-number">2</span>
+                                <div>
+                                    <h5>Append the kernel parameters</h5>
+                                    <p>Find <code>GRUB_CMDLINE_LINUX="..."</code>. Before its closing quote, add a
+                                        space followed by the parameters below. Keep the existing contents.</p>
+                                </div>
+                            </div>
+                            <div class="cmd config-value" data-copy-label="Copy kernel parameters">amd_iommu=off amdgpu.gttsize=126976 ttm.pages_limit=32505856</div>
+                        </div>
+
+                        <div class="procedure-step">
+                            <div class="procedure-step-header">
+                                <span class="procedure-step-number">3</span>
+                                <div>
+                                    <h5>Save, rebuild GRUB, and reboot</h5>
+                                    <p>Save the file and exit the editor before running these commands.</p>
+                                </div>
+                            </div>
+                            <div class="cmd">sudo update-grub</div>
+                            <div class="cmd">sudo reboot</div>
                         </div>
                     </div>
 
@@ -986,7 +1027,7 @@
         };
 
         const enhanceCommandSnippets = () => {
-            const commandLines = Array.from(document.querySelectorAll('.terminal-body .cmd'));
+            const commandLines = Array.from(document.querySelectorAll('.cmd'));
             const processed = new Set();
 
             commandLines.forEach(firstLine => {
@@ -1013,8 +1054,10 @@
                 }
 
                 const command = groupedLines.join('\n');
+                const copyLabel = firstLine.dataset.copyLabel || 'Copy command';
                 const snippet = document.createElement('div');
                 snippet.className = 'command-snippet';
+                snippet.classList.toggle('config-value-snippet', firstLine.classList.contains('config-value'));
                 if (firstLine.style.marginTop) snippet.style.marginTop = firstLine.style.marginTop;
                 if (firstLine.style.fontSize) snippet.style.fontSize = firstLine.style.fontSize;
 
@@ -1027,7 +1070,7 @@
                 const button = document.createElement('button');
                 button.type = 'button';
                 button.className = 'copy-command-btn';
-                button.setAttribute('aria-label', 'Copy command');
+                button.setAttribute('aria-label', copyLabel);
                 button.setAttribute('aria-live', 'polite');
                 button.innerHTML = `${COPY_ICON}<span aria-live="polite">Copy</span>`;
 
@@ -1040,7 +1083,7 @@
 
                         window.setTimeout(() => {
                             button.removeAttribute('data-state');
-                            button.setAttribute('aria-label', 'Copy command');
+                            button.setAttribute('aria-label', copyLabel);
                             button.innerHTML = `${COPY_ICON}<span aria-live="polite">Copy</span>`;
                         }, 2000);
                     } catch (error) {
