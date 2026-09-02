@@ -8,18 +8,18 @@ This is a collection of containerized environments for running GenAI workloads o
 *   **[ComfyUI Toolboxes](https://github.com/kyuz0/amd-strix-halo-comfyui-toolboxes)** - Image & Video Generation (Flux, Wan, Hunyuan)
 *   **[vLLM Toolboxes](https://github.com/kyuz0/amd-strix-halo-vllm-toolboxes)** - High-performance Serving & Clustering
 *   **[LLM Fine-tuning](https://github.com/kyuz0/amd-strix-halo-llm-finetuning)** - Training & QLoRA
-*   **[Llama Cockpit](https://github.com/kyuz0/llama-toolboxes-cockpit)** - TUI control center for managing Llama.cpp toolboxes and models
+*   **[AI Toolbox Cockpit](https://github.com/kyuz0/ai-toolbox-cockpit)** - TUI control center for managing compatible AI containers, models, and servers
 *   **[DwarfStar](https://github.com/kyuz0/strix-halo-ds4-toolbox)** - A small native inference engine optimized first for DeepSeek V4 Flash
 *   **[pi-bench](../pi-bench)** - Local coding benchmark repository for SWE-bench Verified Mini
 
 
-## Recommended Workflow: Llama Cockpit
+## Recommended Workflow: AI Toolbox Cockpit
 
-**[Llama Cockpit](https://github.com/kyuz0/llama-toolboxes-cockpit)** is the easiest way to use the llama.cpp toolboxes. The TUI handles the differences between operating systems and can manage Toolbox or Distrobox environments. Its server mode can also run directly through Docker or Podman.
+**[AI Toolbox Cockpit](https://github.com/kyuz0/ai-toolbox-cockpit)** is the easiest way to manage the supported AI environments. The TUI handles differences between operating systems, container engines, and backend workflows for llama.cpp, DS4, vLLM, and ComfyUI.
 
 ```sh
-pipx install git+https://github.com/kyuz0/llama-toolboxes-cockpit.git
-llama-cockpit
+pipx install git+https://github.com/kyuz0/ai-toolbox-cockpit.git
+ai-toolbox-cockpit
 ```
 
 The host configuration below still applies. If you prefer to create and run containers yourself, use the manual Toolbox or Distrobox instructions on the [project website](https://kyuz0.github.io/amd-strix-halo-toolboxes/).

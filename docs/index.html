@@ -27,7 +27,7 @@
             <a href="#about">The Project</a>
             <a href="#strix">What is Strix Halo?</a>
             <a href="#toolboxes">The Toolboxes</a>
-            <a href="#cockpit">Llama Cockpit</a>
+            <a href="#cockpit">AI Toolbox Cockpit</a>
             <a href="#tutorials">Tutorials</a>
             <a href="#benchmarks">Benchmarks</a>
             <a href="#config">Host Config</a>
@@ -237,22 +237,22 @@
             </div>
         </section>
 
-        <!-- Llama Cockpit -->
+        <!-- AI Toolbox Cockpit -->
         <section id="cockpit" class="section">
             <div class="section-header">
-                <h2>Llama Cockpit</h2>
-                <span style="font-family: var(--font-mono); color: var(--accent-blue);">// TUI CONTAINER MANAGER</span>
+                <h2>AI Toolbox Cockpit</h2>
+                <span style="font-family: var(--font-mono); color: var(--accent-blue);">// LOCAL AI WORKSTATION</span>
             </div>
             <div class="grid-2">
                 <div>
                     <p style="margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.6;">
-                        <strong>Llama Cockpit</strong> is a Terminal User Interface (TUI) that makes it easier to manage
-                        llama.cpp toolboxes and GGUF weights. It also includes a server mode that doesn't require
-                        toolbox or distrobox, running natively via docker/podman to ensure compatibility with any Linux
-                        distribution.
+                        <strong>AI Toolbox Cockpit</strong> is a Terminal User Interface (TUI) for running a local AI
+                        workstation without memorizing a different container workflow for every backend. It manages
+                        compatible Toolbx and Distrobox containers, models, and servers for llama.cpp, DS4, vLLM, and
+                        ComfyUI.
                     </p>
                     <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
-                        <a href="https://github.com/kyuz0/llama-toolboxes-cockpit" target="_blank"
+                        <a href="https://github.com/kyuz0/ai-toolbox-cockpit" target="_blank"
                             class="btn-primary">GitHub Repo -></a>
                         <div class="terminal-block" style="flex-grow: 1; min-width: 280px; max-width: 480px;">
                             <div class="terminal-header">
@@ -261,15 +261,13 @@
                                 <div class="dot green"></div>
                             </div>
                             <div class="terminal-body" style="padding: 0.6rem 1rem;">
-                                <div class="cmd" style="margin: 0; font-size: 0.8rem;"><span
-                                        style="color: var(--text-secondary);">$</span> pipx install
-                                    git+https://github.com/kyuz0/llama-toolboxes-cockpit.git</div>
+                                <div class="cmd" style="margin: 0; font-size: 0.8rem;">pipx install git+https://github.com/kyuz0/ai-toolbox-cockpit.git</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div>
-                    <img src="assets/cockpit-demo.gif" alt="Llama Cockpit Demo"
+                    <img src="assets/cockpit-demo.gif" alt="AI Toolbox Cockpit demo"
                         style="width: 100%; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
                 </div>
             </div>
@@ -772,8 +770,8 @@
                     <div>
                         <h3 class="setup-stage-title">Run the toolboxes</h3>
                         <p class="setup-stage-intro">
-                            Once your host is optimized, Llama Cockpit is the recommended way to create, update, and
-                            run the llama.cpp environments. Manual container commands remain available below for
+                            Once your host is optimized, AI Toolbox Cockpit is the recommended way to create, update,
+                            and run supported AI environments. Manual container commands remain available below for
                             users who want direct control.
                         </p>
                     </div>
@@ -782,15 +780,13 @@
                 <div class="recommended-workflow">
                     <div class="recommended-workflow-copy">
                         <span class="recommended-label">Recommended</span>
-                        <h4>Use Llama Cockpit</h4>
+                        <h4>Use AI Toolbox Cockpit</h4>
                         <p>
-                            Llama Cockpit handles the differences between operating systems and container setups. It
-                            can manage <strong>Toolbox</strong> or <strong>Distrobox</strong>, and its server mode can
-                            run directly through <strong>Docker</strong> or <strong>Podman</strong>. Use the TUI to
-                            choose a backend, create or refresh its environment, manage GGUF models, and start local
-                            or distributed llama.cpp workloads.
+                            AI Toolbox Cockpit handles differences between operating systems, container engines, and
+                            AI backends. Its menu-driven workflow manages compatible containers, models, and servers
+                            for llama.cpp, DS4, vLLM, and ComfyUI.
                         </p>
-                        <a href="#cockpit" class="btn-secondary">Learn about Llama Cockpit</a>
+                        <a href="#cockpit" class="btn-secondary">Learn about AI Toolbox Cockpit</a>
                     </div>
                     <div class="terminal-block recommended-workflow-terminal">
                         <div class="terminal-header" style="background: #333; padding: 0.5rem; text-align: left;">
@@ -798,8 +794,8 @@
                         </div>
                         <div class="terminal-body" style="overflow-x: auto;">
                             <div style="margin-bottom: 1rem; color: #888;"># Install once, then launch the TUI</div>
-                            <div class="cmd">$ pipx install git+https://github.com/kyuz0/llama-toolboxes-cockpit.git</div>
-                            <div class="cmd" style="margin-top: 0.75rem;">$ llama-cockpit</div>
+                            <div class="cmd">pipx install git+https://github.com/kyuz0/ai-toolbox-cockpit.git</div>
+                            <div class="cmd" style="margin-top: 0.75rem;">ai-toolbox-cockpit</div>
                         </div>
                     </div>
                 </div>
@@ -958,6 +954,113 @@
     </footer>
 
     <script>
+        // Turn executable lines into copy-ready command snippets. Shell prompts are
+        // intentionally omitted so the copied text can be pasted as-is.
+        const COPY_ICON = `
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="8" y="8" width="11" height="11" rx="2"></rect>
+                <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"></path>
+            </svg>`;
+        const CHECK_ICON = `
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m5 12 4 4L19 6"></path>
+            </svg>`;
+
+        const copyText = async (text) => {
+            if (navigator.clipboard && window.isSecureContext) {
+                await navigator.clipboard.writeText(text);
+                return;
+            }
+
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.setAttribute('readonly', '');
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            const didCopy = document.execCommand('copy');
+            textarea.remove();
+
+            if (!didCopy) throw new Error('Copy command was unavailable');
+        };
+
+        const enhanceCommandSnippets = () => {
+            const commandLines = Array.from(document.querySelectorAll('.terminal-body .cmd'));
+            const processed = new Set();
+
+            commandLines.forEach(firstLine => {
+                if (processed.has(firstLine)) return;
+
+                const groupedLines = [];
+                let currentLine = firstLine;
+
+                while (currentLine?.classList.contains('cmd')) {
+                    processed.add(currentLine);
+                    const lineText = currentLine.textContent
+                        .replace(/\u00a0/g, ' ')
+                        .replace(/^\s*\$\s?/, '')
+                        .trimEnd();
+                    groupedLines.push(lineText);
+
+                    if (!lineText.endsWith('\\')) break;
+                    currentLine = currentLine.nextElementSibling;
+                }
+
+                const command = groupedLines.join('\n');
+                const snippet = document.createElement('div');
+                snippet.className = 'command-snippet';
+                if (firstLine.style.marginTop) snippet.style.marginTop = firstLine.style.marginTop;
+                if (firstLine.style.fontSize) snippet.style.fontSize = firstLine.style.fontSize;
+
+                const pre = document.createElement('pre');
+                pre.tabIndex = -1;
+                const code = document.createElement('code');
+                code.textContent = command;
+                pre.appendChild(code);
+
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.className = 'copy-command-btn';
+                button.setAttribute('aria-label', 'Copy command');
+                button.setAttribute('aria-live', 'polite');
+                button.innerHTML = `${COPY_ICON}<span aria-live="polite">Copy</span>`;
+
+                button.addEventListener('click', async () => {
+                    try {
+                        await copyText(command);
+                        button.dataset.state = 'copied';
+                        button.setAttribute('aria-label', 'Command copied');
+                        button.innerHTML = `${CHECK_ICON}<span aria-live="polite">Copied</span>`;
+
+                        window.setTimeout(() => {
+                            button.removeAttribute('data-state');
+                            button.setAttribute('aria-label', 'Copy command');
+                            button.innerHTML = `${COPY_ICON}<span aria-live="polite">Copy</span>`;
+                        }, 2000);
+                    } catch (error) {
+                        button.dataset.state = 'error';
+                        button.setAttribute('aria-label', 'Unable to copy command');
+                        button.querySelector('span').textContent = 'Copy failed';
+                        pre.focus();
+                        console.error('Unable to copy command:', error);
+                    }
+                });
+
+                snippet.append(pre, button);
+                firstLine.before(snippet);
+
+                let lineToRemove = firstLine;
+                groupedLines.forEach(() => {
+                    const nextLine = lineToRemove.nextElementSibling;
+                    lineToRemove.remove();
+                    lineToRemove = nextLine;
+                });
+            });
+        };
+
+        enhanceCommandSnippets();
+
         // Mobile Menu Toggle
         const menuBtn = document.querySelector('.mobile-menu-btn');
         const navLinks = document.querySelector('.nav-links');
