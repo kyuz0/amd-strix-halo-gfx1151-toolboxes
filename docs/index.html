@@ -546,9 +546,7 @@
                         <div class="terminal-body" style="overflow-x: auto;">
                             <div class="cmd">$ sudo systemctl set-default multi-user.target</div>
                             <div class="cmd">$ sudo reboot</div>
-                            <div style="margin-top: 0.8rem; color: var(--text-secondary); font-size: 0.85rem;">
-                                # To restore the desktop later:
-                            </div>
+                            <div class="command-group-label" style="margin-top: 1rem;">Restore the desktop later</div>
                             <div class="cmd">$ sudo systemctl set-default graphical.target && sudo reboot</div>
                         </div>
                     </div>
@@ -679,9 +677,7 @@
                         <div class="terminal-body" style="overflow-x: auto;">
                             <div class="cmd">$ sudo systemctl set-default multi-user.target</div>
                             <div class="cmd">$ sudo reboot</div>
-                            <div style="margin-top: 0.8rem; color: var(--text-secondary); font-size: 0.85rem;">
-                                # To restore the desktop later:
-                            </div>
+                            <div class="command-group-label" style="margin-top: 1rem;">Restore the desktop later</div>
                             <div class="cmd">$ sudo systemctl set-default graphical.target && sudo reboot</div>
                         </div>
                     </div>
@@ -716,21 +712,33 @@
                         <code style="font-size: 0.85em;">ttm.pages_limit</code> kernel parameters.
                     </p>
 
-                    <div class="terminal-block" style="margin-bottom: 2rem;">
-                        <div class="terminal-header" style="background: #333; padding: 0.5rem; text-align: left;">
-                            <span style="color: #bbb; font-family: var(--font-mono); font-size: 0.8rem;">user@halo:~</span>
+                    <div class="config-procedure" style="margin-bottom: 2rem;">
+                        <div class="procedure-step">
+                            <div class="procedure-step-header">
+                                <span class="procedure-step-number">1</span>
+                                <div>
+                                    <h5>Install amd-debug-tools</h5>
+                                    <p>Install pipx, add its application directory to your PATH, then install the
+                                        memory configuration tool.</p>
+                                </div>
+                            </div>
+                            <div class="cmd">sudo apt install pipx</div>
+                            <div class="cmd">pipx ensurepath</div>
+                            <div class="cmd">pipx install amd-debug-tools</div>
                         </div>
-                        <div class="terminal-body" style="overflow-x: auto;">
-                            <div style="margin-bottom: 1rem; color: #888;"># Install pipx and amd-debug-tools</div>
-                            <div class="cmd">$ sudo apt install pipx</div>
-                            <div class="cmd">$ pipx ensurepath</div>
-                            <div class="cmd">$ pipx install amd-debug-tools</div>
-                            <div style="margin-top: 1.5rem; margin-bottom: 1rem; color: #888;"># Set unified memory to ~124 GB</div>
-                            <div class="cmd">$ sudo amd-ttm --set 124</div>
+
+                        <div class="procedure-step">
+                            <div class="procedure-step-header">
+                                <span class="procedure-step-number">2</span>
+                                <div>
+                                    <h5>Allocate 124 GB to the GPU</h5>
+                                    <p>Run the tool, confirm the change, and reboot when prompted.</p>
+                                </div>
+                            </div>
+                            <div class="cmd">sudo amd-ttm --set 124</div>
                             <div class="output" style="color: var(--text-primary); white-space: normal;">
                                 🐧 Successfully set TTM pages limit to 32505856 pages (124.00 GB)
                             </div>
-                            <div style="margin-top: 1.5rem; margin-bottom: 1rem; color: #888;"># Reboot when prompted</div>
                         </div>
                     </div>
 
@@ -746,18 +754,42 @@
                             target="_blank" rel="noopener noreferrer">DMA attacks</a> from rogue or compromised
                         external devices. Leave IOMMU enabled if you need the NPU or DMA isolation.
                     </div>
-                    <div class="terminal-block" style="margin-bottom: 2rem;">
-                        <div class="terminal-header" style="background: #333; padding: 0.5rem; text-align: left;">
-                            <span style="color: #bbb; font-family: var(--font-mono); font-size: 0.8rem;">root@halo:~</span>
+                    <div class="config-procedure" style="margin-bottom: 2rem;">
+                        <div class="procedure-step">
+                            <div class="procedure-step-header">
+                                <span class="procedure-step-number">1</span>
+                                <div>
+                                    <h5>Open the systemd-boot kernel command line</h5>
+                                    <p><code>sudoedit</code> opens <code>/etc/kernel/cmdline</code> using your configured editor.</p>
+                                </div>
+                            </div>
+                            <div class="cmd">sudoedit /etc/kernel/cmdline</div>
                         </div>
-                        <div class="terminal-body" style="overflow-x: auto;">
-                            <div style="margin-bottom: 1rem; color: #888;"># Add amd_iommu=off without removing the existing kernel parameters</div>
-                            <div class="cmd">$ sudoedit /etc/kernel/cmdline</div>
-                            <div style="margin-top: 1.5rem; margin-bottom: 1rem; color: #888;"># Rebuild the systemd-boot entry for the running kernel</div>
-                            <div class="cmd">$ sudo kernel-install add "$(uname -r)" \</div>
+
+                        <div class="procedure-step">
+                            <div class="procedure-step-header">
+                                <span class="procedure-step-number">2</span>
+                                <div>
+                                    <h5>Append the IOMMU parameter</h5>
+                                    <p>Add a space followed by the value below to the existing line. Keep every kernel
+                                        parameter already in the file.</p>
+                                </div>
+                            </div>
+                            <div class="cmd config-value" data-copy-label="Copy IOMMU parameter">amd_iommu=off</div>
+                        </div>
+
+                        <div class="procedure-step">
+                            <div class="procedure-step-header">
+                                <span class="procedure-step-number">3</span>
+                                <div>
+                                    <h5>Save, rebuild the boot entry, and reboot</h5>
+                                    <p>Save and exit the editor before rebuilding the entry for the running kernel.</p>
+                                </div>
+                            </div>
+                            <div class="cmd">sudo kernel-install add "$(uname -r)" \</div>
                             <div class="cmd">&nbsp;&nbsp;"/boot/vmlinuz-$(uname -r)" \</div>
                             <div class="cmd">&nbsp;&nbsp;"/boot/initrd.img-$(uname -r)"</div>
-                            <div class="cmd" style="margin-top: 0.5rem;">$ sudo reboot</div>
+                            <div class="cmd" style="margin-top: 0.5rem;">sudo reboot</div>
                         </div>
                     </div>
 
@@ -773,9 +805,7 @@
                         <div class="terminal-body" style="overflow-x: auto;">
                             <div class="cmd">$ sudo systemctl set-default multi-user.target</div>
                             <div class="cmd">$ sudo reboot</div>
-                            <div style="margin-top: 0.8rem; color: var(--text-secondary); font-size: 0.85rem;">
-                                # To restore the desktop later:
-                            </div>
+                            <div class="command-group-label" style="margin-top: 1rem;">Restore the desktop later</div>
                             <div class="cmd">$ sudo systemctl set-default graphical.target && sudo reboot</div>
                         </div>
                     </div>
@@ -834,7 +864,7 @@
                             <span style="color: #bbb; font-family: var(--font-mono); font-size: 0.8rem;">user@host:~</span>
                         </div>
                         <div class="terminal-body" style="overflow-x: auto;">
-                            <div style="margin-bottom: 1rem; color: #888;"># Install once, then launch the TUI</div>
+                            <div class="command-group-label">Install once, then launch the TUI</div>
                             <div class="cmd">pipx install git+https://github.com/kyuz0/ai-toolbox-cockpit.git</div>
                             <div class="cmd" style="margin-top: 0.75rem;">ai-toolbox-cockpit</div>
                         </div>
@@ -883,7 +913,7 @@
                             <span style="color: #bbb; font-family: var(--font-mono); font-size: 0.8rem;">user@fedora:~</span>
                         </div>
                         <div class="terminal-body" style="overflow-x: auto;">
-                            <div style="margin-bottom: 1rem; color: #888;"># Create your toolbox mapped to the host's GPU</div>
+                            <div class="command-group-label">Create your toolbox with GPU access</div>
                             <div class="cmd">$ toolbox create &lt;TOOLBOX_NAME&gt; \</div>
                             <div class="cmd">&nbsp;&nbsp;--image &lt;IMAGE_URL&gt; \</div>
                             <div class="cmd">&nbsp;&nbsp;-- --device /dev/dri --device /dev/kfd \</div>
@@ -914,14 +944,14 @@
                             <span style="color: #bbb; font-family: var(--font-mono); font-size: 0.8rem;">user@ubuntu:~</span>
                         </div>
                         <div class="terminal-body" style="overflow-x: auto;">
-                            <div style="margin-bottom: 1rem; color: #888;"># Step 1: Add your user to required GPU groups</div>
+                            <div class="command-group-label">Step 1 · Add your user to the required GPU groups</div>
                             <div class="cmd">$ sudo usermod -aG video,render $USER</div>
 
-                            <div style="margin-top: 1.5rem; margin-bottom: 1rem; color: #888;"># Step 2: Ensure the compute device is accessible (persists across reboots)</div>
+                            <div class="command-group-label" style="margin-top: 1.5rem;">Step 2 · Make GPU devices accessible across reboots</div>
                             <div class="cmd">$ echo -e 'SUBSYSTEM=="kfd", KERNEL=="kfd", MODE="0666"\nSUBSYSTEM=="drm", KERNEL=="renderD*", MODE="0666"' | sudo tee /etc/udev/rules.d/70-kfd.rules</div>
                             <div class="cmd">$ sudo udevadm control --reload-rules && sudo udevadm trigger</div>
 
-                            <div style="margin-top: 1.5rem; margin-bottom: 1rem; color: #888;"># Step 3: Create your distrobox mapped to the host's GPU</div>
+                            <div class="command-group-label" style="margin-top: 1.5rem;">Step 3 · Create the Distrobox with GPU access</div>
                             <div class="cmd">$ distrobox create &lt;TOOLBOX_NAME&gt; \</div>
                             <div class="cmd">&nbsp;&nbsp;--image &lt;IMAGE_URL&gt; \</div>
                             <div class="cmd">&nbsp;&nbsp;-- --device /dev/dri --device /dev/kfd \</div>

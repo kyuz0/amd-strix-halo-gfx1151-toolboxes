@@ -352,6 +352,17 @@ a:hover {
     padding: 1rem;
 }
 
+.command-group-label {
+    margin-bottom: 0.65rem;
+    color: var(--text-secondary);
+    font-family: var(--font-main);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.045em;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
 .cmd {
     color: var(--accent-green);
     margin-bottom: 0.5rem;
@@ -419,6 +430,15 @@ a:hover {
     margin-bottom: 0;
     font-family: var(--font-mono);
     font-size: 0.9rem;
+}
+
+.procedure-step > .output {
+    margin-top: 0.8rem;
+    padding-left: 0.9rem;
+    border-left: 2px solid var(--accent-green);
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    line-height: 1.6;
 }
 
 .command-snippet {

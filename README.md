@@ -68,16 +68,25 @@ sudo amd-ttm --set 124
 
 **IOMMU** — set `amd_iommu=off` via systemd-boot's cmdline file:
 
-```sh
-# Add amd_iommu=off without removing the existing kernel parameters
-sudoedit /etc/kernel/cmdline
+1. Open the kernel command-line file. `sudoedit` uses your configured editor:
 
-# Rebuild the systemd-boot entry for the running kernel
+```sh
+sudoedit /etc/kernel/cmdline
+```
+
+2. Add a space followed by this value to the existing line. Keep every parameter already in the file:
+
+```text
+amd_iommu=off
+```
+
+3. Save and exit the editor, then rebuild the boot entry and reboot:
+
+```sh
 sudo kernel-install add "$(uname -r)" \
   "/boot/vmlinuz-$(uname -r)" \
   "/boot/initrd.img-$(uname -r)"
 
-# Reboot to apply
 sudo reboot
 ```
 
