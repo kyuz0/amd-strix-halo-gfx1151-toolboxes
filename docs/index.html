@@ -992,18 +992,23 @@
             commandLines.forEach(firstLine => {
                 if (processed.has(firstLine)) return;
 
+                const groupedElements = [];
                 const groupedLines = [];
                 let currentLine = firstLine;
 
                 while (currentLine?.classList.contains('cmd')) {
                     processed.add(currentLine);
+                    groupedElements.push(currentLine);
+
+                    if (groupedLines.length && currentLine.style.marginTop) {
+                        groupedLines.push('');
+                    }
+
                     const lineText = currentLine.textContent
                         .replace(/\u00a0/g, ' ')
                         .replace(/^\s*\$\s?/, '')
                         .trimEnd();
                     groupedLines.push(lineText);
-
-                    if (!lineText.endsWith('\\')) break;
                     currentLine = currentLine.nextElementSibling;
                 }
 
@@ -1050,12 +1055,7 @@
                 snippet.append(pre, button);
                 firstLine.before(snippet);
 
-                let lineToRemove = firstLine;
-                groupedLines.forEach(() => {
-                    const nextLine = lineToRemove.nextElementSibling;
-                    lineToRemove.remove();
-                    lineToRemove = nextLine;
-                });
+                groupedElements.forEach(line => line.remove());
             });
         };
 
