@@ -3,6 +3,12 @@
   "title": "Strix Halo: Local AI on AMD Ryzen AI Max 395",
   "videos": [
     {
+      "id": "mmntN7zIekU",
+      "title": "Local AI on the Framework Desktop: Best Models for 32GB, 64GB, and 128GB",
+      "url": "https://www.youtube.com/watch?v=mmntN7zIekU",
+      "thumbnail": "https://i.ytimg.com/vi/mmntN7zIekU/hqdefault.jpg"
+    },
+    {
       "id": "sMacAPpgXhQ",
       "title": "How I Configure the Ryzen AI Halo (Strix Halo) for 10-15% Faster Local Inference",
       "url": "https://www.youtube.com/watch?v=sMacAPpgXhQ",
@@ -85,12 +91,6 @@
       "title": "Finetuning LLMs on Strix Halo – Full, LoRA, and QLoRA on Gemma-3, Qwen-3, and GPT-OSS-20B",
       "url": "https://www.youtube.com/watch?v=nxugSRDg_jg",
       "thumbnail": "https://i.ytimg.com/vi/nxugSRDg_jg/hqdefault.jpg"
-    },
-    {
-      "id": "jeBqYNWRLEc",
-      "title": "VibeVoice (Speech Generation/Voice Cloning) on Framework Desktop with Strix Halo (AMD AI Ryzen MAX+)",
-      "url": "https://www.youtube.com/watch?v=jeBqYNWRLEc",
-      "thumbnail": "https://i.ytimg.com/vi/jeBqYNWRLEc/hqdefault.jpg"
     }
   ]
 }
