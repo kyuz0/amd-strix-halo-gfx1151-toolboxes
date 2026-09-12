@@ -3,6 +3,12 @@
   "title": "Strix Halo: Local AI on AMD Ryzen AI Max 395",
   "videos": [
     {
+      "id": "Nm_zN6RQ_eE",
+      "title": "Qwen3.8-Flash-Next on AMD Strix Halo: Halogen, N-grams and Benchmarks",
+      "url": "https://www.youtube.com/watch?v=Nm_zN6RQ_eE",
+      "thumbnail": "https://i.ytimg.com/vi/Nm_zN6RQ_eE/hqdefault.jpg"
+    },
+    {
       "id": "mmntN7zIekU",
       "title": "Local AI on the Framework Desktop: Best Models for 32GB, 64GB, and 128GB",
       "url": "https://www.youtube.com/watch?v=mmntN7zIekU",
@@ -85,12 +91,6 @@
       "title": "Building a Two-Node AMD Strix Halo Cluster for LLMs with llama.cpp RPC (MiniMax-M2 & GLM 4.6)",
       "url": "https://www.youtube.com/watch?v=0cIcth224hk",
       "thumbnail": "https://i.ytimg.com/vi/0cIcth224hk/hqdefault.jpg"
-    },
-    {
-      "id": "nxugSRDg_jg",
-      "title": "Finetuning LLMs on Strix Halo – Full, LoRA, and QLoRA on Gemma-3, Qwen-3, and GPT-OSS-20B",
-      "url": "https://www.youtube.com/watch?v=nxugSRDg_jg",
-      "thumbnail": "https://i.ytimg.com/vi/nxugSRDg_jg/hqdefault.jpg"
     }
   ]
 }
