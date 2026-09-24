@@ -3,6 +3,12 @@
   "title": "Strix Halo: Local AI on AMD Ryzen AI Max 395",
   "videos": [
     {
+      "id": "1DaMkTuiCEQ",
+      "title": "DeepSeek V4.1 Flash on Strix Halo: Single-Node SSD vs Two-Node Cluster (DwarfStar)",
+      "url": "https://www.youtube.com/watch?v=1DaMkTuiCEQ",
+      "thumbnail": "https://i.ytimg.com/vi/1DaMkTuiCEQ/hqdefault.jpg"
+    },
+    {
       "id": "Nm_zN6RQ_eE",
       "title": "Qwen3.8-Flash-Next on AMD Strix Halo: Halogen, N-grams and Benchmarks",
       "url": "https://www.youtube.com/watch?v=Nm_zN6RQ_eE",
@@ -85,12 +91,6 @@
       "title": "Running vLLM on Strix Halo (AMD Ryzen AI MAX) + ROCm Performance Updates",
       "url": "https://www.youtube.com/watch?v=wAIzlGwEAO0",
       "thumbnail": "https://i.ytimg.com/vi/wAIzlGwEAO0/hqdefault.jpg"
-    },
-    {
-      "id": "0cIcth224hk",
-      "title": "Building a Two-Node AMD Strix Halo Cluster for LLMs with llama.cpp RPC (MiniMax-M2 & GLM 4.6)",
-      "url": "https://www.youtube.com/watch?v=0cIcth224hk",
-      "thumbnail": "https://i.ytimg.com/vi/0cIcth224hk/hqdefault.jpg"
     }
   ]
 }
