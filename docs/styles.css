@@ -1287,3 +1287,250 @@ footer {
         transform: translateY(0);
     }
 }
+
+/* Brand refresh: restrained technical layout inspired by drafting-grid interfaces. */
+:root {
+    --bg-color: var(--brand-ink);
+    --card-bg: rgb(37 41 46 / 92%);
+    --text-primary: var(--brand-text);
+    --text-secondary: var(--brand-text-soft);
+    --accent-red: var(--brand-gold);
+    --accent-green: var(--brand-data-green);
+    --accent-blue: var(--brand-data-blue);
+    --border-color: rgb(143 150 158 / 42%);
+    --font-main: var(--brand-font-ui);
+    --font-mono: var(--brand-font-mono);
+}
+
+body.brand-surface {
+    min-width: 0;
+    color: var(--text-primary);
+    background-color: var(--bg-color);
+    background-image:
+        linear-gradient(var(--brand-grid-major) 1px, transparent 1px),
+        linear-gradient(90deg, var(--brand-grid-major) 1px, transparent 1px),
+        linear-gradient(var(--brand-grid-minor) 1px, transparent 1px),
+        linear-gradient(90deg, var(--brand-grid-minor) 1px, transparent 1px);
+    background-size: 160px 160px, 160px 160px, 32px 32px, 32px 32px;
+    font-family: var(--font-main);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+.navbar {
+    min-height: 64px;
+    padding: 0 24px;
+    background: rgb(23 26 29 / 88%);
+    backdrop-filter: blur(12px);
+}
+
+.logo {
+    width: auto;
+    margin: 0;
+    overflow: visible;
+    border-right: 0;
+    color: var(--text-primary);
+    font-size: 0.82rem;
+    letter-spacing: 0.045em;
+    animation: none;
+}
+
+.logo span { color: var(--accent-red); }
+
+.nav-links { gap: 0.35rem; }
+
+.nav-links a {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    padding: 0.4rem 0.65rem;
+    border-radius: var(--brand-radius-control);
+    font-family: var(--font-mono);
+    font-size: 0.69rem;
+    font-weight: 500;
+    letter-spacing: 0.055em;
+    text-transform: uppercase;
+}
+
+.nav-links a:hover {
+    color: var(--text-primary);
+    background: rgb(52 56 61 / 72%);
+}
+
+.hero {
+    padding: 88px max(24px, calc((100vw - 1120px) / 2 + 24px)) 72px;
+    text-align: left;
+    background: radial-gradient(760px 320px at 28% -10%, rgb(242 181 68 / 10%), transparent 72%);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hero-eyebrow {
+    margin: 0 0 16px;
+    color: var(--accent-red) !important;
+    font-family: var(--font-mono);
+    font-size: 0.69rem !important;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    max-width: 760px;
+    margin: 0 0 18px;
+    color: var(--text-primary);
+    background: none;
+    font-size: clamp(2.4rem, 4.3vw, 3.4rem);
+    font-weight: 650;
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+    text-wrap: balance;
+    -webkit-text-fill-color: currentColor;
+}
+
+.hero h1 .halo {
+    color: var(--accent-red);
+    -webkit-text-fill-color: currentColor;
+}
+
+.hero p.subtitle {
+    max-width: 680px;
+    margin: 0 0 12px;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    letter-spacing: 0.015em;
+}
+
+.hero > p:last-child {
+    max-width: 680px !important;
+    margin: 0 !important;
+    color: var(--text-secondary) !important;
+    font-size: 0.98rem;
+}
+
+.container {
+    max-width: 1120px;
+    padding: 0 24px;
+}
+
+.section {
+    margin-bottom: 0;
+    padding-block: 80px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section-header {
+    margin-bottom: 36px;
+    padding-left: 14px;
+    border-left: 2px solid var(--accent-red);
+}
+
+.section-header h2 {
+    margin-bottom: 0.35rem;
+    font-size: clamp(1.65rem, 2.5vw, 2.15rem);
+    font-weight: 650;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+}
+
+.grid-2 { gap: 48px; }
+.story-text { color: var(--text-secondary); font-size: 1rem; }
+.story-text p { margin-bottom: 1.15rem; }
+
+.about-card,
+.toolbox-card,
+.video-card,
+.recommended-workflow,
+.manual-setup,
+.os-guide,
+.config-procedure {
+    border-radius: 6px;
+    background: var(--card-bg);
+    box-shadow: none;
+}
+
+.about-card { padding: 24px; }
+.about-card h3 { color: var(--accent-red); font-size: 0.78rem; letter-spacing: 0.09em; }
+
+.toolbox-grid { gap: 16px; }
+
+.toolbox-card {
+    padding: 22px;
+    transition: border-color 0.16s, background-color 0.16s;
+}
+
+.toolbox-card::before { display: none; }
+
+.toolbox-card:hover {
+    border-color: var(--accent-red);
+    background: rgb(52 56 61 / 92%);
+    transform: none;
+}
+
+.toolbox-card h3 { font-size: 1.05rem; font-weight: 650; }
+.toolbox-card p { color: var(--text-secondary); font-size: 0.9rem; }
+
+.terminal-block {
+    border-radius: 8px;
+    background: #111315;
+    box-shadow: 0 14px 34px rgb(0 0 0 / 26%);
+}
+
+.terminal-header { background: #202328; }
+.config-procedure { background: #17191c; }
+.cmd, .command-snippet pre { color: var(--brand-data-green); }
+
+.btn-link {
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    font-weight: 600;
+}
+
+.btn-primary,
+.btn-secondary {
+    min-height: 44px;
+    padding: 0.7rem 1rem;
+    border-radius: var(--brand-radius-control);
+    font-size: 0.875rem;
+    font-weight: 650;
+}
+
+.btn-primary { color: var(--brand-ink); }
+.btn-secondary:hover { color: var(--brand-ink); }
+
+.video-card:hover { transform: none; border-color: var(--accent-red); }
+.video-info h4 { font-weight: 650; }
+
+footer {
+    padding: 3rem 1.5rem;
+    background: rgb(23 26 29 / 72%);
+}
+
+@media (max-width: 1100px) {
+    .mobile-menu-btn { display: block; }
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.25rem;
+        padding: 0.75rem 24px 1rem;
+        background: rgb(23 26 29 / 98%);
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: 0 14px 30px rgb(0 0 0 / 28%);
+    }
+    .nav-links.active { display: flex; }
+}
+
+@media (max-width: 768px) {
+    .hero { padding: 64px 20px 52px; }
+    .hero h1 { font-size: clamp(2.1rem, 11vw, 2.75rem); }
+    .container { padding-inline: 20px; }
+    .section { padding-block: 56px; }
+    .grid-2, .config-grid { gap: 28px; }
+    .section-header { margin-bottom: 28px; }
+}

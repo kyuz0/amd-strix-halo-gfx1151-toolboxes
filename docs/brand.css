@@ -3,18 +3,35 @@
  * the separate youtube-video-scripts checkout.
  */
 :root {
+    color-scheme: dark;
     --brand-ink: #171a1d;
     --brand-charcoal: #25292e;
     --brand-panel: #34383d;
     --brand-panel-quiet: #50565c;
     --brand-muted: #8f969e;
+    --brand-text-soft: #c4c8cd;
     --brand-text: #f1f3f5;
     --brand-white: #ffffff;
     --brand-gold: #f2b544;
     --brand-amber: #8a5a00;
     --brand-gold-pale: #f7e7be;
-    --brand-font-ui: "Bitstream Vera Sans", "DejaVu Sans", Arial, sans-serif;
-    --brand-radius-card: 18px;
-    --brand-border: 1px solid color-mix(in srgb, var(--brand-muted) 42%, transparent);
-    --brand-shadow: 0 16px 40px rgb(0 0 0 / 28%);
+    --brand-data-blue: #3a7ca5;
+    --brand-data-green: #4f8a62;
+    --brand-data-orange: #c47a3a;
+    --brand-data-red: #b75b52;
+    --brand-font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --brand-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    --brand-radius-card: 8px;
+    --brand-radius-control: 4px;
+    --brand-border: 1px solid rgb(143 150 158 / 42%);
+    --brand-shadow: 0 12px 32px rgb(0 0 0 / 18%);
+    --brand-grid-minor: rgb(143 150 158 / 3.5%);
+    --brand-grid-major: rgb(242 181 68 / 5.5%);
+}
+
+body.brand-surface {
+    margin: 0;
+    color: var(--brand-text);
+    background-color: var(--brand-ink);
+    font-family: var(--brand-font-ui);
 }
