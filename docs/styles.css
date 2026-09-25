@@ -1471,6 +1471,174 @@ body.brand-surface {
 .toolbox-card h3 { font-size: 1.05rem; font-weight: 650; }
 .toolbox-card p { color: var(--text-secondary); font-size: 0.9rem; }
 
+/* Benchmarks */
+.benchmark-hub {
+    display: grid;
+    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--card-bg);
+}
+
+.benchmark-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 36px;
+    background:
+        linear-gradient(145deg, rgb(242 181 68 / 11%), transparent 58%),
+        #1d2024;
+}
+
+.benchmark-intro h3 {
+    max-width: 390px;
+    margin-bottom: 1rem;
+    font-size: clamp(1.55rem, 2.6vw, 2.15rem);
+    font-weight: 650;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+}
+
+.benchmark-intro p {
+    max-width: 430px;
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+    font-size: 0.98rem;
+}
+
+.benchmark-cta { margin-top: auto; }
+
+.benchmark-cta svg {
+    width: 1.05rem;
+    height: 1.05rem;
+    margin: 0 0 0 0.45rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.benchmark-questions { padding: 10px 32px; }
+
+.benchmark-question {
+    padding: 26px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.benchmark-question-heading {
+    display: grid;
+    grid-template-columns: 32px minmax(0, 1fr);
+    gap: 12px;
+    align-items: start;
+    margin-bottom: 0.75rem;
+}
+
+.benchmark-number {
+    padding-top: 0.25rem;
+    color: var(--accent-red);
+    font-family: var(--font-mono);
+    font-size: 0.69rem;
+    font-weight: 700;
+}
+
+.benchmark-question h3 {
+    margin-bottom: 0.15rem;
+    font-size: 1.08rem;
+    font-weight: 650;
+}
+
+.benchmark-label {
+    color: var(--accent-red) !important;
+    font-family: var(--font-mono);
+    font-size: 0.68rem !important;
+    font-weight: 600;
+    letter-spacing: 0.055em;
+    text-transform: uppercase;
+}
+
+.benchmark-question > p {
+    padding-left: 44px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.benchmark-note {
+    padding: 20px 0;
+    color: var(--text-secondary);
+    font-size: 0.78rem;
+    line-height: 1.55;
+}
+
+.legacy-benchmarks {
+    margin-top: 16px;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.legacy-benchmarks summary {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 16px;
+    align-items: center;
+    min-height: 52px;
+    padding: 0 4px;
+    color: var(--text-primary);
+    font-size: 0.86rem;
+    font-weight: 650;
+    cursor: pointer;
+    list-style: none;
+}
+
+.legacy-benchmarks summary::-webkit-details-marker { display: none; }
+
+.legacy-summary-note {
+    color: var(--text-secondary);
+    font-size: 0.76rem;
+    font-weight: 400;
+}
+
+.legacy-benchmarks summary svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 0.18s ease;
+}
+
+.legacy-benchmarks[open] summary svg { transform: rotate(180deg); }
+
+.legacy-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 0 4px 16px;
+}
+
+.legacy-links a {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    min-width: 0;
+    padding: 12px 0;
+    border-top: 1px solid rgb(143 150 158 / 22%);
+    color: var(--text-primary);
+    font-size: 0.8rem;
+}
+
+.legacy-links a:nth-child(odd) { padding-right: 20px; }
+.legacy-links a:nth-child(even) { padding-left: 20px; border-left: 1px solid rgb(143 150 158 / 22%); }
+.legacy-links a:hover { color: var(--accent-red); opacity: 1; }
+
+.legacy-links a span:last-child {
+    color: var(--text-secondary);
+    font-size: 0.74rem;
+    text-align: right;
+}
+
 .terminal-block {
     border-radius: 8px;
     background: #111315;
@@ -1533,4 +1701,13 @@ footer {
     .section { padding-block: 56px; }
     .grid-2, .config-grid { gap: 28px; }
     .section-header { margin-bottom: 28px; }
+    .benchmark-hub { grid-template-columns: 1fr; }
+    .benchmark-intro { padding: 28px 24px; }
+    .benchmark-questions { padding: 0 24px; }
+    .benchmark-question > p { padding-left: 0; }
+    .legacy-summary-note { display: none; }
+    .legacy-benchmarks summary { grid-template-columns: 1fr auto; }
+    .legacy-links { grid-template-columns: 1fr; }
+    .legacy-links a:nth-child(odd),
+    .legacy-links a:nth-child(even) { padding: 12px 0; border-left: 0; }
 }

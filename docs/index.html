@@ -291,67 +291,90 @@
         <!-- Benchmarks -->
         <section id="benchmarks" class="section">
             <div class="section-header">
-                <h2>Performance Benchmarks</h2>
-                <span style="font-family: var(--font-mono); color: var(--accent-red);">// HARDWARE CAPABILITIES</span>
+                <h2>Local LLM Benchmarks</h2>
+                <span style="font-family: var(--font-mono); color: var(--accent-red);">// SPEED &amp; USEFUL WORK</span>
             </div>
 
-            <div class="toolbox-grid">
-                <!-- Llama.cpp Benchmarks -->
-                <div class="toolbox-card">
-                    <div class="toolbox-icon">
-                        <img src="assets/llama-cpp-logo.png" alt="Llama.cpp Logo">
-                    </div>
-                    <h3>Llama.cpp Benchmarks</h3>
-                    <p>Token generation speeds (tokens/sec) across various GGUF models.</p>
-                    <a href="https://kyuz0.github.io/amd-strix-halo-toolboxes/" target="_blank" class="btn-link">View
-                        Benchmarks -></a>
+            <div class="benchmark-hub">
+                <div class="benchmark-intro">
+                    <h3>How well does this LLM run on my hardware?</h3>
+                    <p>
+                        A focused view of open-weight models running on local hardware, including Strix Halo and
+                        Radeon AI PRO R9700. Compare responsiveness and practical capability across models,
+                        quantizations, inference engines, and hardware.
+                    </p>
+                    <a href="https://local-llm-benchmarks.dev/" target="_blank" rel="noopener noreferrer"
+                        class="btn-primary benchmark-cta">
+                        Explore the benchmarks
+                        <svg viewBox="0 0 20 20" aria-hidden="true">
+                            <path d="M7 5h8v8M15 5 5 15"></path>
+                        </svg>
+                    </a>
                 </div>
 
-                <!-- vLLM Benchmarks -->
-                <div class="toolbox-card">
-                    <div class="toolbox-icon">
-                        <img src="assets/vllm-logo.png" alt="vLLM Logo">
-                    </div>
-                    <h3>vLLM Benchmarks</h3>
-                    <p>Peak multi-user throughput (tokens/sec) and RDMA/RoCE clustering performance.</p>
+                <div class="benchmark-questions" aria-label="What the benchmarks cover">
+                    <article class="benchmark-question">
+                        <div class="benchmark-question-heading">
+                            <span class="benchmark-number">01</span>
+                            <div>
+                                <h3>How responsive is it?</h3>
+                                <p class="benchmark-label">Speed by context depth</p>
+                            </div>
+                        </div>
+                        <p>Measures prompt processing and token generation as an agent's working context grows. Results
+                            can be compared by model and quantization, backend, serving mode, concurrency, and hardware.</p>
+                    </article>
+
+                    <article class="benchmark-question">
+                        <div class="benchmark-question-heading">
+                            <span class="benchmark-number">02</span>
+                            <div>
+                                <h3>Can it finish useful work?</h3>
+                                <p class="benchmark-label">Terminal-Bench-Local · Core-19</p>
+                            </div>
+                        </div>
+                        <p>Tests local models on 19 short-, medium-, and long-horizon terminal tasks covering building,
+                            debugging, and recovering real systems—not just producing plausible text.</p>
+                    </article>
+
+                    <p class="benchmark-note">These are focused comparisons of speed and coding-agent capability,
+                        not an overall model ranking. A vision benchmark is in development.</p>
+                </div>
+            </div>
+
+            <details class="legacy-benchmarks">
+                <summary>
+                    <span>Legacy benchmarks</span>
+                    <span class="legacy-summary-note">Previous results, no longer maintained</span>
+                    <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 8 4 4 4-4"></path></svg>
+                </summary>
+                <div class="legacy-links">
+                    <a href="https://kyuz0.github.io/amd-strix-halo-toolboxes/" target="_blank"
+                        rel="noopener noreferrer">
+                        <span>Llama.cpp</span>
+                        <span>GGUF token generation results</span>
+                    </a>
                     <a href="https://kyuz0.github.io/amd-strix-halo-vllm-toolboxes/" target="_blank"
-                        class="btn-link">View Benchmarks -></a>
-                </div>
-
-                <!-- ComfyUI Benchmarks -->
-                <div class="toolbox-card">
-                    <div class="toolbox-icon">
-                        <img src="assets/comfy-logo.png" alt="ComfyUI Logo">
-                    </div>
-                    <h3>ComfyUI Benchmarks</h3>
-                    <p>Generation speeds (seconds/it) for HunyuanVideo, Wan 2.2, and Qwen image workflows.</p>
+                        rel="noopener noreferrer">
+                        <span>vLLM</span>
+                        <span>Multi-user throughput and clustering</span>
+                    </a>
                     <a href="https://kyuz0.github.io/amd-strix-halo-comfyui-toolboxes/" target="_blank"
-                        class="btn-link">View Benchmarks -></a>
+                        rel="noopener noreferrer">
+                        <span>ComfyUI</span>
+                        <span>Image and video generation speed</span>
+                    </a>
+                    <a href="https://kyuz0.github.io/strix-halo-ds4-toolbox/" target="_blank"
+                        rel="noopener noreferrer">
+                        <span>DwarfStar</span>
+                        <span>DeepSeek V4 Flash inference</span>
+                    </a>
+                    <a href="https://pi-local-coding-bench.dev/" target="_blank" rel="noopener noreferrer">
+                        <span>SWE-bench Verified Mini</span>
+                        <span>Earlier coding capability benchmark</span>
+                    </a>
                 </div>
-
-                <!-- DwarfStar Benchmarks -->
-                <div class="toolbox-card">
-                    <div class="toolbox-icon">
-                        <img src="assets/deepseek-logo.svg" alt="DeepSeek Logo">
-                    </div>
-                    <h3>DwarfStar Benchmarks</h3>
-                    <p>Inference performance metrics (tokens/sec) for DeepSeek V4 Flash models.</p>
-                    <a href="https://kyuz0.github.io/strix-halo-ds4-toolbox/" target="_blank" class="btn-link">View
-                        Benchmarks -></a>
-                </div>
-
-                <!-- SWE-bench Verified Mini -->
-                <div class="toolbox-card">
-                    <div class="toolbox-icon">
-                        <img src="assets/swe-bench-logo.svg" alt="SWE-bench Logo">
-                    </div>
-                    <h3>SWE-bench Verified Mini</h3>
-                    <p>Coding capability and speed metrics on the SWE-bench Verified Mini dataset. Measures real-world
-                        execution on Strix Halo using accessible quantized models rather than full-precision server
-                        clusters.</p>
-                    <a href="https://pi-local-coding-bench.dev/" target="_blank" class="btn-link">View Benchmarks -></a>
-                </div>
-            </div>
+            </details>
         </section>
 
         <!-- Host Config -->
