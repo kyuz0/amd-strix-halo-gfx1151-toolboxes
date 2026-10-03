@@ -3,6 +3,12 @@
   "title": "Strix Halo: Local AI on AMD Ryzen AI Max 395",
   "videos": [
     {
+      "id": "Z26kN5VfyGA",
+      "title": "192GB Framework Desktop: Local AI on Gorgon Halo",
+      "url": "https://www.youtube.com/watch?v=Z26kN5VfyGA",
+      "thumbnail": "https://i.ytimg.com/vi/Z26kN5VfyGA/hqdefault.jpg"
+    },
+    {
       "id": "1DaMkTuiCEQ",
       "title": "DeepSeek V4.1 Flash on Strix Halo: Single-Node SSD vs Two-Node Cluster (DwarfStar)",
       "url": "https://www.youtube.com/watch?v=1DaMkTuiCEQ",
@@ -85,12 +91,6 @@
       "title": "ROCm+Linux Support on Strix Halo: It's finally stable in 2026!",
       "url": "https://www.youtube.com/watch?v=Hdg7zL3pcIs",
       "thumbnail": "https://i.ytimg.com/vi/Hdg7zL3pcIs/hqdefault.jpg"
-    },
-    {
-      "id": "wAIzlGwEAO0",
-      "title": "Running vLLM on Strix Halo (AMD Ryzen AI MAX) + ROCm Performance Updates",
-      "url": "https://www.youtube.com/watch?v=wAIzlGwEAO0",
-      "thumbnail": "https://i.ytimg.com/vi/wAIzlGwEAO0/hqdefault.jpg"
     }
   ]
 }
